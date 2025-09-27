@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COP WES Training Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <!-- Header -->
+   <header>
+    <div class="top-bar">
+      <a href="#">Home</a>
+      <!-- <div class="auth-links">
+        <a href="#">Join</a>
+        <a href="#">Log in</a>
+      </div> -->
+    </div>
+    <nav class="main-nav">
+      <div class="logo">
+        <img src="images/logo1.png" alt="WHO IPSN COP WES Training">
+        <h1>Community Of Practise </h1>
+      </div>
+      <!-- <ul>
+        <li><a href="#">Communities</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Tools</a></li>
+      </ul> -->
+      <div class="search-box">
+        <input type="text" placeholder="Search">
+      </div>
+    </nav>
+  </header> 
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Wastewater and Environmental Surveillance</h2>
+    <!-- <p>
+      Use our CourseFinder to search for Further & Higher Education courses in Ireland.
+      Use the filters to narrow down your preferences.
+    </p> -->
+
+    <!-- <div class="hero-buttons">
+      <button>CourseFinder Help</button>
+      <button>Progression Routes</button>
+      <button>Fetchcourses.ie</button>
+    </div> -->
+  </section> 
+
+  <!-- Main Content -->
+  <main>
+    <aside class="sidebar">
+      <h3>Course Name or Code</h3>
+      <input type="text" id="courseSearch" placeholder="Search for any course name or code">
+      <p><small>Example: "ani" will find animal and mechanical.</small></p>
+      <label><input type="checkbox"> My Favourites</label>
+
+      <h3>Career Sectors</h3>
+      <!-- <ul>
+        <li>Accountancy, Finance & Insurance</li>
+        <li>Health Sciences</li>
+        <li>Engineering</li>
+        <li>IT & Computing</li>
+      </ul> -->
+
+      <ul class="career-list">
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>Accountancy, Finance & Insurance</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Accounting Technician</li>
+        <li>Insurance</li>
+        <li>Auditing</li>
+        <li>Banking</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>Agriculture, Animals & Food</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Agriculture</li>
+        <li>Animal Science</li>
+        <li>Food Science</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>Business, Sales & Tourism</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Marketing</li>
+        <li>Management</li>
+        <li>Tourism</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>Creative Arts, Fashion & Media</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Fashion Design</li>
+        <li>Fine Arts</li>
+        <li>Media Production</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>Government, Law & Education</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Law</li>
+        <li>Education</li>
+        <li>Public Administration</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>Healthcare, Wellbeing & Sport</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Medicine</li>
+        <li>Sports Science</li>
+        <li>Wellness</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <div class="dropdown-header">
+        <span>STEM, Environment & Construction</span>
+        <span class="arrow">&#9662;</span>
+      </div>
+      <ul class="dropdown-content">
+        <li>Engineering</li>
+        <li>ICT</li>
+        <li>Construction</li>
+      </ul>
+    </li>
+  </ul>
+
+    </aside>
+
+    <section class="course-list">
+      <div class="course-header">
+        <div class="course-header-left">
+        <p>Found <strong>500</strong> courses</p>
+          <button id="clearFilters">Clear All Filters</button>
+        </div>
+
+        <div class="course-actions">
+          <label for="sortCourses">Sort by:</label>
+             <select id="sortCourses">
+               <option>Course Title</option>
+               <option>College</option>
+               <option>NFQ Level</option>
+             </select>
+         </div>
+      </div>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>Course Category</th>
+            <th>Course Description</th>
+            <th>Organization</th>
+            
+          </tr>
+        </thead>
+
+    <tbody id="courseTable">
+  <!-- Course 1 -->
+ <tr class="course-row">
+    <td>⭐</td>
+    <td>Foundations of WES</td>
+    <td>Introduces the purpose, value, and interdisciplinary nature of Wastewater Epidemiological Surveillance (WES), along with real-world pilot implementations.</td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+  <!-- Course 2 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td> Methods & Protocols</td>
+    <td>Covers the scientific procedures and methodological standards for collecting and processing wastewater data. </td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+ <!-- Course 3 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Data Systems & Analysis</td>
+    <td>Focuses on tools, platforms, and analytical techniques for interpreting, visualizing, and leveraging wastewater data. </td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+ 
+   <!-- Course 5 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Metadata, Standards & Interoperability</td>
+    <td>Addresses the structuring of data, standardization, privacy concerns, and ensuring systems can work across tools, regions, and institutions. </td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <!-- Course 5 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td> Place-Based Applications </td>
+    <td>Shows how WES is applied in different contexts—urban centers, emergency zones, and community-based systems—with a focus on policy and operational integration. </td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <!-- Course 6 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Training, Collaboration & Growth</td>
+    <td>Interactive components that build skills, foster peer learning, and connect practitioners through hands-on learning and certification. </td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <!-- Course 7 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Postgraduate</td>
+    <td>Nursing & Midwifery - Primary Community & Continuing Care</td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <!-- Course 8 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Postgraduate</td>
+    <td>Nursing & Midwifery - Primary Community & Continuing Care</td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+ <!-- Course 9 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Postgraduate</td>
+    <td>Nursing & Midwifery - Primary Community & Continuing Care</td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <!-- Course 10 -->
+  <tr class="course-row">
+    <td>⭐</td>
+    <td>Postgraduate</td>
+    <td>Nursing & Midwifery - Primary Community & Continuing Care</td>
+    <td>RCSI University of Medicine and Health Sciences</td>
+
+    <td class="expand-toggle">▼</td>
+  </tr>
+  <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+   <tr class="course-details-row">
+    <td colspan="5">
+        <div class="course-details-inline">
+          <h4>Introduction to WES </h4>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+           <div class="actions">
+          <button class="primary-btn">Full Course Details</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+</tbody>
+</table> 
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <span>Records per page</span>
+        <select>
+          <option>100</option>
+          <option>50</option>
+          <option>25</option>
+        </select>
+        <div class="page-links">
+          <button disabled>&lt;&lt;</button>
+          <button disabled>&lt;</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <span>...</span>
+          <button>89</button>
+          <button>&gt;</button>
+          <button>&gt;&gt;</button>
+        </div>
+      </div>
+      <button class="back-to-top">Back to the top ↑</button>
+    </section>
+  </main> 
+
+  <!-- Footer -->
+   <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Privacy Statement</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Clear Cache</a>
+      <a href="#">Sitemap</a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; COP WES Training Project</p>
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">X</a>
+        <a href="#">YouTube</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COP WES Training Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> -->
+  <!-- Header -->
+  <!-- <header>
+    <div class="top-bar">
+      <a href="#">Home</a>
+      <div class="auth-links">
+        <a href="#">Join</a>
+        <a href="#">Log in</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="logo">
+        <img src="assets/logo.png" alt="CareersPortal Logo">
+      </div>
+      <ul>
+        <li><a href="#">Communities</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Tools</a></li>
+      </ul>
+      <div class="search-box">
+        <input type="text" placeholder="Search">
+      </div>
+    </nav>
+  </header> -->
+
+  <!-- Hero Section -->
+  <!-- <section class="hero">
+    <h2>Course Finder</h2>
+    <p>
+      Use our CourseFinder to search for Further & Higher Education courses in Ireland.
+      Use the filters to narrow down your preferences.
+    </p>
+    <div class="hero-buttons">
+      <button>CourseFinder Help</button>
+      <button>Progression Routes</button>
+      <button>Fetchcourses.ie</button>
+    </div>
+  </section> -->
+
+  <!-- Main Content -->
+  <!-- <main> -->
+    <!-- Sidebar -->
+    <!-- <aside class="sidebar">
+      <h3>Course Name or Code</h3>
+      <input type="text" id="courseSearch" placeholder="Search for any course name or code">
+      <p><small>Example: "ani" will find animal and mechanical.</small></p>
+      <label><input type="checkbox"> My Favourites</label> -->
+
+      <!-- Collapsible Filters -->
+      <!-- <div class="filter-group">
+        <button class="collapsible">Career Sectors</button>
+        <ul class="content">
+          <li>Accountancy, Finance & Insurance</li>
+          <li class="green">Agriculture, Animals & Food</li>
+          <li class="blue">Business, Sales & Tourism</li>
+          <li class="pink">Creative Arts, Fashion & Media</li>
+          <li class="orange">Government, Law & Education</li>
+          <li class="teal">Healthcare, Wellbeing & Sport</li>
+          <li class="purple">STEM, Environment & Construction</li>
+        </ul>
+      </div>
+
+      <div class="filter-group">
+        <button class="collapsible">Course Type</button>
+        <ul class="content">
+          <li><input type="checkbox"> PLC (Further Education - FET)</li>
+          <li><input type="checkbox"> Undergraduate</li>
+          <li><input type="checkbox"> Postgraduate</li>
+        </ul>
+      </div>
+    </aside> -->
+
+    <!-- Course Section -->
+    <!-- <section class="course-list">
+      <div class="course-header">
+        <p>Found <strong>8881</strong> courses</p>
+        <button id="clearFilters">Clear All Filters</button>
+        <div class="controls">
+          <label for="sort">Sort by:</label>
+          <select id="sort">
+            <option>Course Title</option>
+            <option>College</option>
+            <option>NFQ Level</option>
+          </select>
+        </div>
+      </div> -->
+
+      <!-- Course Table -->
+      <!-- <div class="course-item">
+        <div class="course-summary">
+          <span>⭐</span>
+          <span class="tag">Postgraduate</span>
+          <h4 class="title">Nursing & Midwifery - Cancer Nursing - Beaumont Hospital</h4>
+          <span class="college">RCSI University of Medicine and Health Sciences</span>
+          <span class="nfq">NFQ Level 9</span>
+          <button class="toggle-details">▼</button>
+        </div>
+        <div class="course-details">
+          <img src="assets/rcsi.png" alt="RCSI Logo" class="logo-small">
+          <h5>Course Overview</h5>
+          <p>
+            Enhance your knowledge of professional, clinical, leadership and managerial issues 
+            related to the care of the oncology patient and develop key research skills.
+          </p>
+          <div class="tags">
+            <span class="chip">Social</span>
+            <span class="chip">Investigative</span>
+          </div>
+          <div class="actions">
+            <button>View College Profile</button>
+            <button>Share</button>
+            <button class="primary">Full Course Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-summary">
+          <span>⭐</span>
+          <span class="tag">Postgraduate</span>
+          <h4 class="title">Nursing & Midwifery - Primary Community & Continuing Care</h4>
+          <span class="college">RCSI University of Medicine and Health Sciences</span>
+          <span class="nfq">NFQ Level 9</span>
+          <button class="toggle-details">▼</button>
+        </div>
+        <div class="course-details">
+          <img src="assets/rcsi.png" alt="RCSI Logo" class="logo-small">
+          <h5>Course Overview</h5>
+          <p>
+            Prepares you to provide leadership and expert practice in community and continuing care.
+          </p>
+          <div class="tags">
+            <span class="chip">Social</span>
+          </div>
+          <div class="actions">
+            <button>View College Profile</button>
+            <button>Share</button>
+            <button class="primary">Full Course Details</button>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Pagination -->
+      <!-- <div class="pagination">
+        <span>Records per page</span>
+        <select>
+          <option>100</option>
+          <option>50</option>
+          <option>25</option>
+        </select>
+        <div class="page-links">
+          <button disabled>&lt;&lt;</button>
+          <button disabled>&lt;</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <span>...</span>
+          <button>89</button>
+          <button>&gt;</button>
+          <button>&gt;&gt;</button>
+        </div>
+      </div>
+      <button class="back-to-top">Back to the top ↑</button>
+    </section>
+  </main> -->
+
+  <!-- Footer -->
+  <!-- <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Privacy Statement</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Clear Cache</a>
+      <a href="#">Sitemap</a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; COP WES Training Project</p>
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">X</a>
+        <a href="#">YouTube</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
