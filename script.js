@@ -28,31 +28,31 @@ document.querySelectorAll(".collapsible").forEach(btn => {
 });
 
 // Toggle course details
-document.querySelectorAll(".toggle-details").forEach(button => {
-  button.addEventListener("click", (e) => {
-    const details = e.target.closest(".course-item").querySelector(".course-details");
-    details.style.display = (details.style.display === "block") ? "none" : "block";
-    e.target.textContent = details.style.display === "block" ? "▲" : "▼";
-  });
-});
-
-// Toggle course details with icon rotation
 // document.querySelectorAll(".toggle-details").forEach(button => {
 //   button.addEventListener("click", (e) => {
-//     const courseItem = e.target.closest(".course-item");
-//     const details = courseItem.querySelector(".course-details");
-//     const icon = button.querySelector("img"); // select the image inside the button
-
-    // Toggle visibility of the details
-    // const isVisible = details.style.display === "block";
-    // details.style.display = isVisible ? "none" : "block";
-
-    // Toggle rotation of the icon instead of replacing it
-//     if (icon) {
-//       icon.classList.toggle("rotated", !isVisible);
-//     }
+//     const details = e.target.closest(".course-item").querySelector(".course-details");
+//     details.style.display = (details.style.display === "block") ? "none" : "block";
+//     e.target.textContent = details.style.display === "block" ? "▲" : "▼";
 //   });
 // });
+
+// Toggle course details with icon rotation
+document.querySelectorAll(".toggle-details").forEach(button => {
+  button.addEventListener("click", (e) => {
+    const courseItem = e.target.closest(".course-item");
+    const details = courseItem.querySelector(".course-details");
+    const icon = button.querySelector("img"); // select the image inside the button
+
+    // Toggle visibility of the details
+    const isVisible = details.style.display === "block";
+    details.style.display = isVisible ? "none" : "block";
+
+    // Toggle rotation of the icon instead of replacing it
+    if (icon) {
+      icon.classList.toggle("rotated", !isVisible);
+    }
+  });
+});
 
 // Dropdown toggle for career sectors
 document.querySelectorAll('.dropdown-header').forEach(header => {
