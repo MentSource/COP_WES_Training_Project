@@ -1,93 +1,96 @@
-// Mobile sidebar
-const mobileMenu=document.getElementById('mobile-menu');
-const sidebar=document.getElementById('sidebar');
-mobileMenu.addEventListener('click',()=>sidebar.classList.toggle('show'));
+// Example: Simple filter logic for demo
+document.getElementById("clearFilters").addEventListener("click", () => {
+  document.getElementById("courseSearch").value = "";
+  alert("Filters cleared!");
+});
 
-// Sidebar dropdown filters
-document.querySelectorAll('.drop-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const list=btn.nextElementSibling;
-    list.style.display=list.style.display==='block'?'none':'block';
+document.querySelector(".back-to-top").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Clear Filters
+document.getElementById("clearFilters").addEventListener("click", () => {
+  document.getElementById("courseSearch").value = "";
+  alert("Filters cleared!");
+});
+
+// Back to top
+document.querySelector(".back-to-top").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Collapsible filters
+document.querySelectorAll(".collapsible").forEach(btn => {
+  btn.addEventListener("click", () => {
+    let content = btn.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
   });
 });
 
-// Dummy data to simulate course list
-const courses=[
-  {
-    title:'Nursing & Midwifery - Cancer Nursing - Beaumont Hospital',
-    college:'RCSI University of Medicine and Health Sciences',
-    nfq:'9',duration:'1 Year',qqi:'—',points:'—',
-    overview:'Enhance your knowledge of professional, clinical, leadership and managerial issues related to the care of the oncology patient and develop key research skills.',
-    badges:['Social','Investigative']
-  },
-  {
-    title:'Nursing & Midwifery - Primary Community & Continuing Care',
-    college:'RCSI University of Medicine and Health Sciences',
-    nfq:'9',duration:'1 Year',qqi:'—',points:'—',
-    overview:'Advanced practice for community-based nursing roles.',
-    badges:['Social']
-  },
-  {
-    title:'Positive Health Sciences - Leading Workplace Health & Well-being',
-    college:'RCSI University of Medicine and Health Sciences',
-    nfq:'9',duration:'1 Year',qqi:'—',points:'—',
-    overview:'Learn strategies to lead health and wellbeing initiatives in the workplace.',
-    badges:['Investigative']
-  }
-];
+// Toggle course details
+document.querySelectorAll(".toggle-details").forEach(button => {
+  button.addEventListener("click", (e) => {
+    const details = e.target.closest(".course-item").querySelector(".course-details");
+    details.style.display = (details.style.display === "block") ? "none" : "block";
+    e.target.textContent = details.style.display === "block" ? "▲" : "▼";
+  });
+});
 
-const table=document.getElementById('course-table');
-const count=document.getElementById('count');
-const search=document.getElementById('course-search');
-const sort=document.getElementById('sort');
+// Toggle course details with icon rotation
+// document.querySelectorAll(".toggle-details").forEach(button => {
+//   button.addEventListener("click", (e) => {
+//     const courseItem = e.target.closest(".course-item");
+//     const details = courseItem.querySelector(".course-details");
+//     const icon = button.querySelector("img"); // select the image inside the button
 
-function render(filter=''){
-  let list=courses.filter(c=>c.title.toLowerCase().includes(filter.toLowerCase()));
-  if(sort.value==='college') list=list.sort((a,b)=>a.college.localeCompare(b.college));
-  else list=list.sort((a,b)=>a.title.localeCompare(b.title));
+    // Toggle visibility of the details
+    // const isVisible = details.style.display === "block";
+    // details.style.display = isVisible ? "none" : "block";
 
-  table.innerHTML='';
-  list.forEach(c=>{
-    const row=document.createElement('div');
-    row.className='course-row';
-    row.innerHTML=`
-      <div class="row-header">
-        <div>
-          <div class="course-title">${c.title}</div>
-          <div class="row-meta">
-            <span>${c.college}</span>
-            <span>NFQ ${c.nfq}</span>
-            <span>${c.duration}</span>
-          </div>
-        </div>
-        // <div>▼</div>
-      </div>
-      <div class="row-details">
-        <p>${c.overview}</p>
-        <p>${c.badges.map(b=>`<span class="badge">${b}</span>`).join(' ')}</p>
-        <button class="btn">Full Course Details</button>
-      </div>
-    `;
-    const header=row.querySelector('.row-header');
-    header.addEventListener('click',()=>{
-      const d=row.querySelector('.row-details');
-      const arrow=header.querySelector('div:last-child');
-      const open=d.style.display==='block';
-      d.style.display=open?'none':'block';
-      arrow.textContent=open?'':'';
+    // Toggle rotation of the icon instead of replacing it
+//     if (icon) {
+//       icon.classList.toggle("rotated", !isVisible);
+//     }
+//   });
+// });
+
+// Dropdown toggle for career sectors
+document.querySelectorAll('.dropdown-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const parent = header.parentElement;
+    parent.classList.toggle('open');
+  });
+});
+
+// Expand/Collapse course details
+document.addEventListener("DOMContentLoaded", () => {
+  const toggles = document.querySelectorAll(".expand-toggle");
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const row = toggle.closest("tr");
+      let nextRow = row.nextElementSibling;
+      let isVisible = false;
+
+      // Check if details are visible
+      if (nextRow && nextRow.classList.contains("course-details-row")) {
+        isVisible = nextRow.style.display === "table-row";
+      }
+
+      // Loop until next course-row
+      while (nextRow && !nextRow.classList.contains("course-row")) {
+        if (nextRow.classList.contains("course-details-row")) {
+          nextRow.style.display = isVisible ? "none" : "table-row";
+        }
+        nextRow = nextRow.nextElementSibling;
+      }
+
+      // Update arrow
+      toggle.textContent = isVisible ? "▼" : "▲";
     });
-    table.appendChild(row);
   });
-  count.textContent=list.length;
-}
-
-search.addEventListener('input',e=>render(e.target.value));
-sort.addEventListener('change',()=>render(search.value));
-document.getElementById('clear-filters').addEventListener('click',()=>{
-  search.value=''; render();
 });
 
-render();
 
 const dna = document.getElementById('dna');
 if (dna) {
@@ -130,10 +133,38 @@ if (dna) {
     dot.style.left   = left + 'px';
     dot.style.top    = top + 'px';
     dot.style.background = colors[Math.floor(Math.random() * colors.length)];
-    dot.style.animationDelay = (Math.random() * 4) + 's';
+    // dot.style.animationDelay = (Math.random() * 4) + 's'; Commenting animation off
     dna.appendChild(dot);
   }
 
   createDNA();
   window.addEventListener('resize', createDNA);
 }
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const toggles = document.querySelectorAll(".expand-toggle");
+
+//   toggles.forEach(toggle => {
+//     toggle.addEventListener("click", () => {
+//       const row = toggle.closest("tr");
+//       const nextRow = row.nextElementSibling;
+
+//       if (nextRow && nextRow.classList.contains("course-details-row")) {
+//         const isVisible = nextRow.style.display === "table-row";
+//         nextRow.style.display = isVisible ? "none" : "table-row";
+//         toggle.textContent = isVisible ? "▼" : "▲"; // change icon
+//       }
+//     });
+//   });
+// });
+
+// document.querySelectorAll(".expand-toggle").forEach(toggle => {
+//   toggle.addEventListener("click", function () {
+//     const detailsRow = this.closest("tr").nextElementSibling;
+//     if (detailsRow && detailsRow.classList.contains("course-details-row")) {
+//       detailsRow.style.display = 
+//         detailsRow.style.display === "table-row" ? "none" : "table-row";
+//     }
+//   });
+// });
