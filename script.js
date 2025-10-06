@@ -1,107 +1,165 @@
 // Example: Simple filter logic for demo
-document.getElementById("clearFilters").addEventListener("click", () => {
-  document.getElementById("courseSearch").value = "";
-  alert("Filters cleared!");
-});
+// document.getElementById("clearFilters").addEventListener("click", () => {
+//   document.getElementById("courseSearch").value = "";
+//   alert("Filters cleared!");
+// });
 
-document.querySelector(".back-to-top").addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// document.querySelector(".back-to-top").addEventListener("click", () => {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// });
 
-// Clear Filters
-document.getElementById("clearFilters").addEventListener("click", () => {
-  document.getElementById("courseSearch").value = "";
-  alert("Filters cleared!");
-});
+// // Clear Filters
+// document.getElementById("clearFilters").addEventListener("click", () => {
+//   document.getElementById("courseSearch").value = "";
+//   alert("Filters cleared!");
+// });
 
-// Back to top
-document.querySelector(".back-to-top").addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// // Back to top
+// document.querySelector(".back-to-top").addEventListener("click", () => {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// });
 
-// Collapsible filters
-document.querySelectorAll(".collapsible").forEach(btn => {
-  btn.addEventListener("click", () => {
-    let content = btn.nextElementSibling;
-    content.style.display = (content.style.display === "block") ? "none" : "block";
-  });
-});
-
-// Toggle course details
-// document.querySelectorAll(".toggle-details").forEach(button => {
-//   button.addEventListener("click", (e) => {
-//     const details = e.target.closest(".course-item").querySelector(".course-details");
-//     details.style.display = (details.style.display === "block") ? "none" : "block";
-//     e.target.textContent = details.style.display === "block" ? "▲" : "▼";
+// // Collapsible filters
+// document.querySelectorAll(".collapsible").forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     let content = btn.nextElementSibling;
+//     content.style.display = (content.style.display === "block") ? "none" : "block";
 //   });
 // });
 
-// Toggle course details with icon rotation
-// document.querySelectorAll(".toggle-details").forEach(button => {
-//   button.addEventListener("click", (e) => {
-//     const courseItem = e.target.closest(".course-item");
-//     const details = courseItem.querySelector(".course-details");
-//     const icon = button.querySelector("img"); // select the image inside the button
+// // Toggle course details
+// // document.querySelectorAll(".toggle-details").forEach(button => {
+// //   button.addEventListener("click", (e) => {
+// //     const details = e.target.closest(".course-item").querySelector(".course-details");
+// //     details.style.display = (details.style.display === "block") ? "none" : "block";
+// //     e.target.textContent = details.style.display === "block" ? "▲" : "▼";
+// //   });
+// // });
 
-//     // Toggle visibility of the details
+
+// document.querySelectorAll(".expand-icon").forEach(icon => {
+//   icon.addEventListener("click", () => {
+//     const courseItem = icon.closest(".course-item");
+//     const details = courseItem.querySelector(".course-details");
+
 //     const isVisible = details.style.display === "block";
 //     details.style.display = isVisible ? "none" : "block";
-
-//     // Toggle rotation of the icon instead of replacing it
-//     if (icon) {
-//       icon.classList.toggle("rotated", !isVisible);
-//     }
+//     icon.classList.toggle("rotated", !isVisible);
 //   });
 // });
 
-document.querySelectorAll(".expand-icon").forEach(icon => {
-  icon.addEventListener("click", () => {
-    const courseItem = icon.closest(".course-item");
-    const details = courseItem.querySelector(".course-details");
+// // Dropdown toggle for career sectors
+// document.querySelectorAll('.dropdown-header').forEach(header => {
+//   header.addEventListener('click', () => {
+//     const parent = header.parentElement;
+//     parent.classList.toggle('open');
+//   });
+// });
 
-    const isVisible = details.style.display === "block";
-    details.style.display = isVisible ? "none" : "block";
-    icon.classList.toggle("rotated", !isVisible);
-  });
-});
+// // Expand/Collapse course details
+// document.addEventListener("DOMContentLoaded", () => {
+//   const toggles = document.querySelectorAll(".expand-toggle");
 
-// Dropdown toggle for career sectors
-document.querySelectorAll('.dropdown-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const parent = header.parentElement;
-    parent.classList.toggle('open');
-  });
-});
+//   toggles.forEach(toggle => {
+//     toggle.addEventListener("click", () => {
+//       const row = toggle.closest("tr");
+//       let nextRow = row.nextElementSibling;
+//       let isVisible = false;
 
-// Expand/Collapse course details
+//       // Check if details are visible
+//       if (nextRow && nextRow.classList.contains("course-details-row")) {
+//         isVisible = nextRow.style.display === "table-row";
+//       }
+
+//       // Loop until next course-row
+//       while (nextRow && !nextRow.classList.contains("course-row")) {
+//         if (nextRow.classList.contains("course-details-row")) {
+//           nextRow.style.display = isVisible ? "none" : "table-row";
+//         }
+//         nextRow = nextRow.nextElementSibling;
+//       }
+
+//       // Update arrow
+//       toggle.textContent = isVisible ? "▼" : "▲";
+//     });
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
-  const toggles = document.querySelectorAll(".expand-toggle");
+  // ---- Clear Filters (single listener, safe checks) ----
+  const clearBtn = document.getElementById("clearFilters");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      const cs = document.getElementById("courseSearch");
+      if (cs) cs.value = "";
+      alert("Filters cleared!");
+    });
+  }
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener("click", () => {
-      const row = toggle.closest("tr");
-      let nextRow = row.nextElementSibling;
-      let isVisible = false;
+  // ---- Back to top ----
+  const backToTop = document.querySelector(".back-to-top");
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
-      // Check if details are visible
-      if (nextRow && nextRow.classList.contains("course-details-row")) {
-        isVisible = nextRow.style.display === "table-row";
-      }
-
-      // Loop until next course-row
-      while (nextRow && !nextRow.classList.contains("course-row")) {
-        if (nextRow.classList.contains("course-details-row")) {
-          nextRow.style.display = isVisible ? "none" : "table-row";
-        }
-        nextRow = nextRow.nextElementSibling;
-      }
-
-      // Update arrow
-      toggle.textContent = isVisible ? "▼" : "▲";
+  // ---- Collapsible filters ----
+  document.querySelectorAll(".collapsible").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling;
+      if (!content) return;
+      content.style.display = (getComputedStyle(content).display === "none") ? "block" : "none";
     });
   });
-});
 
+  // ---- Dropdown headers ----
+  document.querySelectorAll('.dropdown-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const parent = header.parentElement;
+      if (parent) parent.classList.toggle('open');
+    });
+  });
+
+  // ---- Expand/Collapse course details (single, authoritative handler) ----
+  // Assumes rows: <tr class="course-row">...</tr> followed by one or more <tr class="course-details-row">...</tr>
+  document.querySelectorAll(".expand-toggle").forEach(toggle => {
+    toggle.addEventListener("click", (e) => {
+      // Let clicks on the image bubble up — we handle everything here.
+      const row = toggle.closest("tr");
+      if (!row) return;
+
+      // Find first course-details-row after this row (stop at next .course-row)
+      let firstDetails = row.nextElementSibling;
+      while (firstDetails && !firstDetails.classList.contains("course-row")) {
+        if (firstDetails.classList.contains("course-details-row")) break;
+        firstDetails = firstDetails.nextElementSibling;
+      }
+      if (!firstDetails || !firstDetails.classList.contains("course-details-row")) return; // nothing to toggle
+
+      // Determine current visibility from computed style (safer than style.display)
+      const isVisible = getComputedStyle(firstDetails).display !== "none";
+      const newDisplay = isVisible ? "none" : "table-row";
+
+      // Toggle all consecutive course-details-row until the next .course-row
+      let cur = row.nextElementSibling;
+      while (cur && !cur.classList.contains("course-row")) {
+        if (cur.classList.contains("course-details-row")) {
+          cur.style.display = newDisplay;
+        }
+        cur = cur.nextElementSibling;
+      }
+
+      // Rotate the icon inside the toggle without replacing content
+      const img = toggle.querySelector("img.expand-icon");
+      if (img) {
+        img.classList.toggle("rotated", !isVisible);
+      }
+    });
+  });
+
+  // NOTE: remove any other .expand-icon click listeners to avoid duplicates.
+});
 
 const dna = document.getElementById('dna');
 if (dna) {
