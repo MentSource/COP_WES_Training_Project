@@ -37,20 +37,31 @@ document.querySelectorAll(".collapsible").forEach(btn => {
 // });
 
 // Toggle course details with icon rotation
-document.querySelectorAll(".toggle-details").forEach(button => {
-  button.addEventListener("click", (e) => {
-    const courseItem = e.target.closest(".course-item");
-    const details = courseItem.querySelector(".course-details");
-    const icon = button.querySelector("img"); // select the image inside the button
+// document.querySelectorAll(".toggle-details").forEach(button => {
+//   button.addEventListener("click", (e) => {
+//     const courseItem = e.target.closest(".course-item");
+//     const details = courseItem.querySelector(".course-details");
+//     const icon = button.querySelector("img"); // select the image inside the button
 
-    // Toggle visibility of the details
+//     // Toggle visibility of the details
+//     const isVisible = details.style.display === "block";
+//     details.style.display = isVisible ? "none" : "block";
+
+//     // Toggle rotation of the icon instead of replacing it
+//     if (icon) {
+//       icon.classList.toggle("rotated", !isVisible);
+//     }
+//   });
+// });
+
+document.querySelectorAll(".expand-icon").forEach(icon => {
+  icon.addEventListener("click", () => {
+    const courseItem = icon.closest(".course-item");
+    const details = courseItem.querySelector(".course-details");
+
     const isVisible = details.style.display === "block";
     details.style.display = isVisible ? "none" : "block";
-
-    // Toggle rotation of the icon instead of replacing it
-    if (icon) {
-      icon.classList.toggle("rotated", !isVisible);
-    }
+    icon.classList.toggle("rotated", !isVisible);
   });
 });
 

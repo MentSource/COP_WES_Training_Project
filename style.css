@@ -462,23 +462,28 @@ td em {
 }
 
 /* Expand/Collapse Toggle */
-/* .expand-toggle {
+.expand-toggle {
   text-align: center;
   vertical-align: middle;
 }
 
 .expand-icon {
   width: 28px;
-  height: 28px; */
-  /* cursor: pointer; */
-  /* transition: transform 0.3s ease;
+  height: 28px; 
+  cursor: pointer;
+ transition: transform 0.3s ease;
 }
 
 .expand-icon.rotated {
   transform: rotate(180deg); 
+  transition: transform 0.3s ease;
+}
+
+/* 
+.rotated {
+  transform: rotate(180deg);
+  
 } */
-
-
 
 
 /* Expand/Collapse Toggle */
