@@ -228,6 +228,9 @@ thead th {
   font-weight: bold;
   color: #fff;
 } 
+.course-row {
+  border-bottom: 6px solid #e9f8fb; /* orange line between rows */
+}
 
 
 /* Pagination */
