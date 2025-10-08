@@ -28,12 +28,72 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---- Dropdown headers ----
-  document.querySelectorAll('.dropdown-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const parent = header.parentElement;
-      if (parent) parent.classList.toggle('open');
-    });
+  // document.querySelectorAll('.dropdown-header').forEach(header => {
+  //   header.addEventListener('click', () => {
+  //     const parent = header.parentElement;
+  //     if (parent) parent.classList.toggle('open');
+  //   });
+  // });
+  
+  // Toggle dropdown open/close
+// document.querySelectorAll('.dropdown-header').forEach(header => {
+//   header.addEventListener('click', () => {
+//     const parent = header.closest('.dropdown');
+//     parent.classList.toggle('open');
+//   });
+// });
+
+// Handle category selection
+// document.querySelectorAll('.category-checkbox').forEach(checkbox => {
+//   checkbox.addEventListener('change', (e) => {
+//     const category = e.target.dataset.category;
+//     const courses = document.querySelectorAll(`.course-item[data-category="${category}"]`);
+
+//     courses.forEach(course => {
+//       course.classList.toggle('selected', e.target.checked);
+//     });
+//   });
+// });
+
+
+// Toggle dropdown visibility
+document.querySelectorAll('.dropdown-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const parent = header.closest('.dropdown');
+    parent.classList.toggle('open');
   });
+});
+
+// Handle category checkbox filtering
+document.querySelectorAll('.category-checkbox').forEach(checkbox => {
+  checkbox.addEventListener('change', (e) => {
+    const category = e.target.dataset.category;
+    const courses = document.querySelectorAll('.course-item');
+    const anyChecked = Array.from(document.querySelectorAll('.category-checkbox'))
+                            .some(cb => cb.checked);
+
+    if (anyChecked) {
+      // Hide all courses first
+      courses.forEach(course => {
+        course.classList.add('hidden');
+      });
+
+      // Show only selected categories
+      document.querySelectorAll('.category-checkbox:checked').forEach(checkedBox => {
+        const selectedCategory = checkedBox.dataset.category;
+        document.querySelectorAll(`.course-item[data-category="${selectedCategory}"]`)
+                .forEach(course => course.classList.remove('hidden'));
+      });
+    } else {
+      // If no checkbox is checked, show all
+      courses.forEach(course => course.classList.remove('hidden'));
+    }
+  });
+});
+
+
+
+
 
   // ---- Expand/Collapse course details (single, authoritative handler) ----
   // Assumes rows: <tr class="course-row">...</tr> followed by one or more <tr class="course-details-row">...</tr>
@@ -74,6 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // NOTE: remove any other .expand-icon click listeners to avoid duplicates.
 });
+
+
+
+// ---- Animated DNA background ----
 
 const dna = document.getElementById('dna');
 if (dna) {

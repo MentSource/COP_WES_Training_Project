@@ -14,9 +14,9 @@ header {
   justify-content: space-between;
   padding: 5px 20px;
   background: white;
-  height: 70px;
+  height: 100px;
 }
-
+/* 
 .banner-text{
   color:#199cd8;
   text-align: left;
@@ -47,8 +47,62 @@ header {
   background-position: center;       
   background-repeat: no-repeat;       
   border-radius: 8px;                 
+} */
+
+/* ==== IPSN Banner ==== */
+.banner{
+  display:flex;
+  justify-content:flex-start;   /* text left, DNA fills right */
+  align-items:center;
+  height:100px;
+  padding:2rem;
+  background:#fff;
+  overflow:hidden;
+  gap: 3rem;
 }
 
+.banner-text{
+  color:#199cd8;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.banner-text h2{
+  margin:0 ;
+  font-size:3rem;
+  letter-spacing:1px;
+  flex-shrink: 0;
+  align-self: center;
+}
+.banner-text p{
+  margin: 0;
+  font-size:1.2rem;
+  color:#4da6d4;
+  line-height:1.4;
+}
+
+.dna{
+  flex:1 ;               
+  position:relative;
+  min-width: 400px;
+  height: 60px;                   /* taller for full visibility */
+  display: flex;
+  align-items: center;             /* centers the DNA vertically */
+  justify-content: center;      
+}
+
+.dot{
+  position:absolute;
+  border-radius:50%;
+  opacity:0.9;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-15px); }
+}
 
 .main-nav {
   display: flex;
@@ -115,6 +169,14 @@ header {
   border:none;
   border-radius:4px;
 
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .container{flex-direction:column}
+  .sidebar{position:absolute;top:56px;left:0;height:calc(100% - 56px);transform:translateX(-100%);z-index:20}
+  .sidebar.show{transform:translateX(0)}
+  .hamburger{display:inline-block}
 }
 
 /* .hero-buttons button {
@@ -230,6 +292,7 @@ thead th {
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
+  background-color: #e9f8fb;
 }
 
 .card p, .card label, .card ul {
@@ -333,6 +396,22 @@ thead th {
   display: block;
 }
 
+/* Highlight selected courses */
+.course-item.selected {
+  background-color: #d0f0ff;
+  border-left: 4px solid #009ecf;
+}
+
+/* Course styling */
+.course-item {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.course-item.hidden {
+  display: none;
+}
+
 /* Course Header (courses count + filters) */
 .course-header {
   display: flex;
@@ -431,11 +510,11 @@ thead th {
 }
 
  .primary-btn {
-  background: #009ecf;
+  background: #5acee6;
   color: #fff;
   border: none;
-  padding: 8px 14px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -491,6 +570,7 @@ td em {
   height: 28px;
   cursor: pointer;
   transition: transform 0.3s ease;
+
 }
 
 .expand-icon.rotated {
@@ -571,11 +651,39 @@ footer {
   margin: 0 10px;
   color: white;
   text-decoration: none;
-}
+ }
+
+/* .footer-bottom {
+  margin-top: 10px;
+}  */
+
+
 .footer-bottom {
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between; /* space between text and socials */
+  align-items: center; /* vertically center */
+  gap: 10px; /* makes it responsive if screen is narrow */
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
+  max-width: 1200px; 
+   color: #d19d1d;
 }
+
+.footer-bottom p {
+  margin: 0; /* remove default paragraph margin */
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* space between social links */
+}
+
 .socials a {
   margin: 0 8px;
-  color: white;
+  color: #d19d1d;
+  text-decoration: none;
 }
