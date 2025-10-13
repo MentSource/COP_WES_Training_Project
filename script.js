@@ -34,26 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //     if (parent) parent.classList.toggle('open');
   //   });
   // });
-  
-  // Toggle dropdown open/close
-// document.querySelectorAll('.dropdown-header').forEach(header => {
-//   header.addEventListener('click', () => {
-//     const parent = header.closest('.dropdown');
-//     parent.classList.toggle('open');
-//   });
-// });
 
-// Handle category selection
-// document.querySelectorAll('.category-checkbox').forEach(checkbox => {
-//   checkbox.addEventListener('change', (e) => {
-//     const category = e.target.dataset.category;
-//     const courses = document.querySelectorAll(`.course-item[data-category="${category}"]`);
-
-//     courses.forEach(course => {
-//       course.classList.toggle('selected', e.target.checked);
-//     });
-//   });
-// });
 
 
 // Toggle dropdown visibility
@@ -135,6 +116,55 @@ document.querySelectorAll('.category-checkbox').forEach(checkbox => {
   // NOTE: remove any other .expand-icon click listeners to avoid duplicates.
 });
 
+
+// === SEARCH FUNCTION ===
+// document.getElementById('global-search').addEventListener('keyup', function () {
+//   const keyword = this.value.toLowerCase().trim();
+//   const rows = document.querySelectorAll('.course-row');
+
+//   rows.forEach(row => {
+//     const text = row.textContent.toLowerCase();
+//     // Show row if keyword exists in text
+//     row.style.display = text.includes(keyword) ? '' : 'none';
+//   });
+// });
+
+document.getElementById('global-search').addEventListener('input', function() {
+  const keyword = this.value.toLowerCase().trim();
+  const rows = document.querySelectorAll('.course-row');
+
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    if (text.includes(keyword)) {
+      row.style.display = ''; // show
+    } else {
+      row.style.display = 'none'; // hide
+    }
+  });
+});
+
+
+document.getElementById('courseSearch').addEventListener('input', function() {
+  const keyword = this.value.toLowerCase().trim();
+  const rows = document.querySelectorAll('.course-row');
+
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    if (text.includes(keyword)) {
+      row.style.display = ''; // show
+    } else {
+      row.style.display = 'none'; // hide
+    }
+  });
+});
+
+// === HAMBURGER MENU FUNCTION ===
+const hamburger = document.getElementById('mobile-menu');
+const nav = document.querySelector('.nav-links'); // Change selector to your actual nav container class or ID
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
 
 
 // ---- Animated DNA background ----

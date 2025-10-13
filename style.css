@@ -106,24 +106,41 @@ header {
 
 .main-nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2px 8px;
+  padding: 4px 10px;
   background: #009ecf;
-  height: 20px;
+  height: 80px;
+  position: relative;
 }
 
 .nav-text {
   display: flex;
   align-items: center;
-  gap: 10px; 
+  justify-content: center;
+  gap: 20px; 
 }
 
 .nav-text h3 {
   font-size: 20px;
   color: white; 
   margin: 0;
-  line-height: 1;
+  position: absolute;
+  bottom: 8px; /* sit at bottom of main-nav */
+  left: 9px;
+  /* line-height: 1; */
+  /* padding-bottom: 6px;
+  align-self: flex-end; */
+}
+
+.nav-text p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  margin-left: 30px; 
+  max-width: 65%;
 }
 
 /* Hero */
@@ -154,12 +171,12 @@ header {
 }
 
 .hamburger{        
-  font-size: 1.2rem;
+  /* font-size: 1.2rem;
   background: none;
   border: none;
   color: #fff;
-  cursor: pointer;
-
+  cursor: pointer; */
+display: block;
 
 }
 
@@ -229,9 +246,14 @@ thead th {
   color: #fff;
 } 
 .course-row {
-  border-bottom: 6px solid #e9f8fb; /* orange line between rows */
+  border-bottom: 6px solid #e9f8fb; 
 }
 
+table td em {
+  color: #d19d1d;
+  font-style: italic; 
+  font-size: 14px; 
+}
 
 /* Pagination */
 .pagination {
@@ -393,6 +415,8 @@ thead th {
   padding-left: 15px;
   margin: 5px 0;
   background:#e9f8fb;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .dropdown.open .dropdown-content {
@@ -512,7 +536,19 @@ thead th {
   border-radius: 8px;
 }
 
- .primary-btn {
+.access-link {
+  color: #009ecf;           
+  text-decoration: none;    
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.access-link:hover {
+  text-decoration: underline; 
+  color: #0077a5;             
+}
+
+ /* .primary-btn {
   background: #5acee6;
   color: #fff;
   border: none;
@@ -523,7 +559,7 @@ thead th {
 
 .primary-btn:hover {
   background: #009ecf;
-}
+} */
 
 .course-details-inline {
   display: flex;
