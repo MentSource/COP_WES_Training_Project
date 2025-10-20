@@ -27,10 +27,10 @@
     <nav class="main-nav">
       <div class="nav-text">
         <h3>Community Of Practice</h3>
-        <p>Welcome to the WES Trainings, a collaborative platform developed by the WHO International Pathogen Surveillance Network (IPSN) Community of Practice (CoP) on Wastewater and Environmental Surveillance (WES), 
+        <!-- <p>Welcome to the WES Trainings, a collaborative platform developed by the WHO International Pathogen Surveillance Network (IPSN) Community of Practice (CoP) on Wastewater and Environmental Surveillance (WES), 
       in collaboration with Global Wastewater and Environmental Surveillance. Our goal is to enhance knowledge sharing, capacity building, and the implementation of effective surveillance strategies worldwide.
       Explore curated collection of diverse range of training resources in WES. 
-      </p> 
+      </p>  -->
       </div>
   
 
@@ -56,123 +56,66 @@
 
       <div class="card">  
         <h3>Search for a Course</h3>
-        <input type="text" id="courseSearch" placeholder="Search by Keywords">
         <p><small>Example: Viral trainings.</small></p>
-        <label>My Favourites <input type="checkbox"> </label>
+        <input type="text" id="courseSearch" placeholder="Search by Keywords">
+        
+        <!-- <label>
+        <button class="primary-btn"> Submit a Training Course</button> </label> -->
+
+    <label>
+        <a href="mailto:training@yourdomain.com?cc=info@yourdomain.com&subject=Submit%20a%20Training%20Course&body=Hello%2C%0D%0A%0D%0AI'd%20like%20to%20submit%20a%20new%20training%20course.%0D%0A%0D%0AThank%20you!" 
+          class="primary-btn">
+          Submit a Training Course
+        </a>
+    </label>
+
       </div>
 
   <div class="card">  
-      <h3>Course Categories Description</h3>
+      <h3>Course Categories</h3>
 
       <ul class="career-list">
         <li class="dropdown">
           <div class="dropdown-header green">
             <span>Foundations of WES</span>
-            <span class="arrow">&#9662;</span>
+            <input type="checkbox" class="category-checkbox" data-category="Foundations of WES">
            </div>
-          <ul class="dropdown-content">
-            <li>
-              Introduces the purpose, value, 
-              and interdisciplinary nature of Wastewater 
-              Epidemiological Surveillance (WES), 
-              along with real-world pilot implementations.
-                  <!-- Foundations of WES 
-                   <input type="checkbox" class="category-checkbox" data-category="foundations"> -->
-            </li>
-              <!-- <li>Foundations of WES <input type="checkbox"> </li> -->
-          </ul>
         </li>
 
 
     <li class="dropdown">
       <div class="dropdown-header blue">
         <span>Method & Protocols</span>
-        <span class="arrow">&#9662;</span>
+          <input type="checkbox" class="category-checkbox" data-category="Method & Protocols">
       </div>
-      <ul class="dropdown-content">
-          <li>
-            Covers the scientific procedures and methodological 
-          standards for collecting and processing wastewater data.
-        <!-- <li>Methods & Protocols <input type="checkbox">  -->
-         <!-- <input type="checkbox" class="category-checkbox" data-category="Method & Protocols"> -->
-        </li>
-      </ul>
     </li>
 
     <li class="dropdown">
       <div class="dropdown-header pink">
         <span>Data System & Analysis </span>
-        <span class="arrow">&#9662;</span>
+        <input type="checkbox" class="category-checkbox" data-category="Data Systems & Analysis">
       </div>
-      <ul class="dropdown-content"> 
-      
-        <li>
-          Focuses on tools, platforms, and
-           analytical techniques for interpreting, visualizing, 
-           and leveraging wastewater data.
-          <!-- Data Systems & Analysis  -->
-           <!-- <input type="checkbox" class="category-checkbox" data-category="Data Systems & Analysis"> -->
-          <!-- <input type="checkbox">  -->
-        </li>
-        
-      </ul>
     </li>
 
     <li class="dropdown">
       <div class="dropdown-header orange">
         <span>Metadata, Standards & Interoperability</span>
-        <span class="arrow">&#9662;</span>
+        <input type="checkbox" class="category-checkbox" data-category="Metadata, Standards & Interoperability">
       </div>
-      <ul class="dropdown-content">
-        <li>
-          Addresses the structuring of data, standardization, 
-           concerns, and ensuring systems can work across tools, 
-           regions, and institutions.
-          <!-- Metadata, Standards & Interoperability 
-          <input type="checkbox" class="category-checkbox" data-category="Metadata, Standards & Interoperability"> -->
-          <!-- <input type="checkbox"> -->
-        
-        </li>
-      </ul>
     </li>
 
     <li class="dropdown">
       <div class="dropdown-header teal">
         <span>Place-Based Applications</span>
-        <span class="arrow">&#9662;</span>
+        <input type="checkbox" class="category-checkbox" data-category="Place-Based Applications">
       </div>
-      <ul class="dropdown-content">
-
-        <li>
-          Shows how WES is applied in different 
-          contexts—urban centers, emergency zones, and 
-          community-based systems—with a focus on policy and 
-          operational integration.
-
-          <!-- Place-Based Applications 
-          <input type="checkbox" class="category-checkbox" data-category="Place-Based Applications"> -->
-          <!-- <input type="checkbox">  -->
-        </li>
-      
-      </ul>
     </li>
 
     <li class="dropdown">
       <div class="dropdown-header purple">
         <span>Training, Collaboration & Growth</span>
-        <span class="arrow">&#9662;</span>
+          <input type="checkbox" class="category-checkbox" data-category="Training, Collaboration & Growth">
       </div>
-      <ul class="dropdown-content">
-        
-        <li>
-
-        Interactive components that build skills, 
-          foster peer learning, and connect practitioners 
-          through hands-on learning and certification.
-          <!-- Training, Collaboration & Growth <input type="checkbox">  -->
-        </li>
-       
-      </ul>
     </li>
 
   </ul>
@@ -213,7 +156,7 @@
     <tbody id="courseTable">
   
       <!-- Course 1 -->
- <tr class="course-row">
+ <tr class="course-row" data-category="Foundations of WES">
     <td>Asynchronous online</td>
     <td>Foundations of WES</td>
     <td>Introduction to WES .</td>
@@ -221,13 +164,11 @@
 
    <td class="expand-toggle">
      <a href="#" class="access-link">Access Course</a>
-    <!-- <button class="primary-btn"> Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
   
 
- <tr class="course-row">
+ <tr class="course-row" data-category="Foundations of WES">
     <td>Synchronous online</td>
     <td>Foundations of WES</td>
     <td>Introduction to Epidemiological Concepts and Approaches in WES .</td>
@@ -239,7 +180,7 @@
    </td>
   </tr>
 
-  <tr class="course-row">
+  <tr class="course-row" data-category="Foundations of WES">
     <td>Hybrid in-person/online</td>
     <td>Foundations of WES</td>
     <td>National Report: Experience Establishing Pilot Project.</td>
@@ -247,12 +188,11 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
        <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
 
-  <tr class="course-row">
+  <tr class="course-row" data-category="Foundations of WES">
     <td>In-person</td>
     <td>Foundations of WES</td>
     <td>Strategies and Benefits of Interdisciplinary Collaboration for Data Integration.</td>
@@ -260,13 +200,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
        <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
    
-
-  <!-- Course 2 -->
-  <tr class="course-row">
+  <tr class="course-row" data-category="Foundations of WES">
     <td>Asynchronous online</td>
     <td> Methods & Protocols</td>
     <td>Methodologies in Wastewater Sampling. </td>
@@ -274,11 +211,11 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
        <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-<tr class="course-row">
+  <!-- Course 2 -->
+<tr class="course-row" data-category="Method & Protocols">
     <td>Synchronous online</td>
     <td> Methods & Protocols</td>
     <td>Sampling Protocols. </td>
@@ -286,11 +223,10 @@
     <td class="expand-toggle">
         <a href="#" class="access-link">Access Course</a>
        <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-  <tr class="course-row">
+  <tr class="course-row" data-category="Method & Protocols">
     <td>Hybrid in-person/online</td>
     <td> Methods & Protocols</td>
     <td>Analytical Procedures for Detection and Quantification of Different Targets. </td>
@@ -298,11 +234,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
  
-  <tr class="course-row">
+  <tr class="course-row" data-category="Method & Protocols">
     <td>Synchronous online</td>
     <td> Methods & Protocols</td>
     <td> Normalization Strategies. </td>
@@ -310,11 +245,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
        <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
  
-  <tr class="course-row">
+  <tr class="course-row" data-category="Method & Protocols">
     <td>Hybrid in-person/online</td>
     <td> Methods & Protocols</td>
     <td>Statistical Methods. </td>
@@ -322,12 +256,11 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
  
  <!-- Course 3 -->
-  <tr class="course-row">
+  <tr class="course-row" data-category="Data Systems & Analysis">
     <td>Hybrid in-person / online</td>
     <td>Data Systems & Analysis</td>
     <td>Data Platform / Visualization. </td>
@@ -335,11 +268,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-   <tr class="course-row">
+   <tr class="course-row" data-category="Data Systems & Analysis">
     <td>Synchronous online</td>
     <td>Data Systems & Analysis</td>
     <td>Analyzing and Interpreting Wastewater Data. </td>
@@ -347,11 +279,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-<tr class="course-row">
+<tr class="course-row" data-category="Data Systems & Analysis">
     <td>In-person</td>
     <td>Data Systems & Analysis</td>
     <td>Data Communication in WES . </td>
@@ -359,12 +290,11 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
  
    <!-- Course 5 -->
-  <tr class="course-row">
+  <tr class="course-row" data-category="Metadata, Standards & Interoperability">
     <td>Asynchronous online</td>
     <td>Metadata, Standards & Interoperability</td>
     <td>Ensuring Data Anonymity and Privacy Protection. </td>
@@ -372,11 +302,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-   <tr class="course-row">
+   <tr class="course-row" >
     <td>In-person</td>
     <td>Metadata, Standards & Interoperability</td>
     <td>Metadata Standards for WES. </td>
@@ -384,11 +313,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-   <tr class="course-row">
+   <tr class="course-row" data-category="Metadata, Standards & Interoperability">
     <td>Synchronous online</td>
     <td>Metadata, Standards & Interoperability</td>
     <td>Interoperability Across Systems and Platforms. </td>
@@ -396,11 +324,10 @@
     <td class="expand-toggle">
       <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
- <tr class="course-row">
+ <tr class="course-row" data-category="Metadata, Standards & Interoperability">
     <td>Asynchronous online</td>
     <td>Metadata, Standards & Interoperability</td>
     <td>Governance and Long-term Data Stewardship. </td>
@@ -408,101 +335,92 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
    <!-- Course 5 -->
-  <tr class="course-row">
+  <tr class="course-row" data-category="Place-Based Applications">
     <td>Hybrid in-person/online</td>
-    <td> Place-Based Applications<em>Urban/HUB Settings</em> </td>
+    <td> Place-Based Applications
+      <!-- <em>Urban/HUB Settings</em>  -->
+    </td>
     <td>WES in HUBs. </td>
     <td>RCSI University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-<tr class="course-row">
+<tr class="course-row" data-category="Place-Based Applications">
     <td>In-person</td>
-    <td> Place-Based Applications<em>Urban/HUB Settings</em> </td>
+    <td> Place-Based Applications </td>
     <td>Integration into Public Health Systems / Decisionmakers. </td>
     <td>Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-  <tr class="course-row">
+  <tr class="course-row" data-category="Place-Based Applications">
     <td>Asynchronous online</td>
-    <td> Place-Based Applications<em>Urban/HUB Settings</em> </td>
+    <td> Place-Based Applications</td>
     <td>Engagement with Policymakers. </td>
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
    <!-- Course 6 -->
-  <tr class="course-row">
+  <tr class="course-row" data-category="Place-Based Applications">
     <td>In-person</td>
-    <td> Place-Based Applications <em>Emergency or High-Risk Zones</em> </td>
+    <td> Place-Based Applications </td>
     <td>WES in Emergency Zones. </td>
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
- <tr class="course-row">
+ <tr class="course-row" data-category="Place-Based Applications">
     <td>Synchronous online</td>
-    <td> Place-Based Applications.
-      <em>Emergency or High-Risk Zones</em> </td>
+    <td> Place-Based Applications. </td>
     <td>Planning Effective Interventions Using Wastewater Data. </td>
     <td>Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-   <tr class="course-row">
+   <tr class="course-row" data-category="Place-Based Applications">
     <td>In-person</td>
-    <td> Place-Based Applications.
-      <em>Emergency or High-Risk Zones</em> </td>
+    <td> Place-Based Applications.</td>
     <td>Regulatory Compliance and Legal Considerations. </td>
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-<tr class="course-row">
+<tr class="course-row" data-category="Place-Based Applications">
     <td>Hybrid in-person/online</td>
-    <td> Place-Based Applications.
-      <em>Community-Level Engagement</em> </td>
+    <td> Place-Based Applications.</td>
     <td>Engaging Stakeholders and Community Awareness. </td>
     <td>Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
    <!-- Course 7 -->
-  <tr class="course-row">
+  <tr class="course-row" data-category="Training, Collaboration & Growth">
     <td>Synchronous online</td>
     <td>Training, Collaboration & Growth</td>
     <td>Practical Exercises and Group Discussions</td>
@@ -510,11 +428,10 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
-<tr class="course-row">
+<tr class="course-row" data-category="Training, Collaboration & Growth">
     <td>Asynchronous online</td>
     <td>Training, Collaboration & Growth</td>
     <td>Resources, Networking, and Certification Opportunities</td>
@@ -522,7 +439,6 @@
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
       <!-- <button class="primary-btn">Access Course</button> -->
-     <!-- <img src="images/icons8-down-button-16.png" alt="Expand" class="expand-icon"> -->
    </td>
   </tr>
 
@@ -530,26 +446,51 @@
 </table> 
 
       <!-- Pagination -->
-      <div class="pagination">
+
+      <div id="result-info" style="margin-top:10px; font-size:14px; color:#555;"></div>
+
+<div class="pagination">
+  <span>Records per page</span>
+  <select id="records-per-page">
+    <option>50</option>
+    <option>25</option>
+    <option>10</option>
+  </select>
+
+  <div id="page-links" class="page-links"></div>
+</div>
+
+<button class="back-to-top">Back to the top ↑</button>
+
+      <!-- <div class="pagination">
         <span>Records per page</span>
-        <select>
-          <option>100</option>
+        <select  id="records-per-page">
           <option>50</option>
           <option>25</option>
-        </select>
-        <div class="page-links">
+           <option>10</option>
+        </select> -->
+
+        <!-- <div class="page-links"> -->
           <!-- <button disabled>&lt;&lt;</button>
           <button disabled>&lt;</button> -->
-          <button class="active">1</button>
+          <!-- <div id="page-links" class="page-links"></div>
+
+        <div class="courses">
+          <tr class="course-row" data-category="online">...</tr>
+          <tr class="course-row" data-category="onsite"></tr> -->
+         
+          <!-- <button class="active">1</button>
           <button>2</button>
           <button>3</button>
-          <span>...</span>
+          <span>...</span> -->
           <!-- <button>89</button>
           <button>&gt;</button>
           <button>&gt;&gt;</button> -->
-        </div>
+
+        <!-- </div>
       </div>
-      <button class="back-to-top">Back to the top ↑</button>
+      <button class="back-to-top">Back to the top ↑</button> -->
+
     </section>
   </main> 
 

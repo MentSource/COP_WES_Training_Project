@@ -111,7 +111,7 @@ header {
   align-items: center;
   padding: 4px 10px;
   background: #009ecf;
-  height: 80px;
+  height: 30px;
   position: relative;
 }
 
@@ -134,14 +134,14 @@ header {
   align-self: flex-end; */
 }
 
-.nav-text p {
+/* .nav-text p {
   color: white;
   font-size: 14px;
   margin: 0;
   line-height: 1.5;
   margin-left: 30px; 
   max-width: 65%;
-}
+} */
 
 /* Hero */
 .hero {
@@ -393,23 +393,60 @@ table td em {
   padding: 5px 0;
 }
 
-.dropdown-header.green .header-text { color: #66bb6a; }
+/* Make checkbox match header color */
+.custom-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 6px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+/* When checked, fill with same background as parent header */
+.dropdown-header.green .custom-checkbox:checked { background-color: #66bb6a; }
+.dropdown-header.blue .custom-checkbox:checked { background-color: #42a5f5; }
+.dropdown-header.pink .custom-checkbox:checked { background-color: #ec407a; }
+.dropdown-header.orange .custom-checkbox:checked { background-color: #ff9800; }
+.dropdown-header.teal .custom-checkbox:checked { background-color: #26a69a; }
+.dropdown-header.purple .custom-checkbox:checked { background-color: #8e24aa; }
+
+/* When checked, fill stays white (optional slight tint) */
+.custom-checkbox:checked {
+  background-color: white;
+}
+
+.course-row.selected {
+  background-color: rgba(102, 187, 106, 0.2); /* light green tint */
+}
+
+.course-row.hidden {
+  display: none;
+}
+/* Optional hover glow */
+.custom-checkbox:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+/* .dropdown-header.green .header-text { color: #66bb6a; }
 .dropdown-header.blue .header-text { color: #42a5f5; }
 .dropdown-header.pink .header-text { color: #ec407a; }
 .dropdown-header.orange .header-text { color: #ff9800; }
 .dropdown-header.teal .header-text { color: #26a69a; }
-.dropdown-header.purple .header-text { color: #8e24aa; }
+.dropdown-header.purple .header-text { color: #8e24aa; } */
 
 
-.arrow {
+/* .arrow {
   transition: transform 0.3s ease;
 }
 
 .dropdown.open .arrow {
   transform: rotate(180deg);
-}
+} */
 
-.dropdown-content {
+/* .dropdown-content {
   display: none;
   list-style: none;
   padding-left: 15px;
@@ -421,7 +458,7 @@ table td em {
 
 .dropdown.open .dropdown-content {
   display: block;
-}
+} */
 
 /* Highlight selected courses */
 .course-item.selected {
@@ -548,18 +585,18 @@ table td em {
   color: #0077a5;             
 }
 
- /* .primary-btn {
+ .primary-btn {
   background: #5acee6;
   color: #fff;
   border: none;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .primary-btn:hover {
   background: #009ecf;
-} */
+}
 
 .course-details-inline {
   display: flex;
@@ -678,6 +715,32 @@ td em {
   pointer-events: none;
 } */
 
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.page-links button {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.page-links button.active {
+  background-color: #054a87;
+  color: white;
+  font-weight: bold;
+}
+
+.page-links button:hover {
+  background-color: #066ad1;
+  color: white;
+}
+
 
 /* Footer */
 footer {
@@ -700,9 +763,9 @@ footer {
 .footer-bottom {
   margin-top: 10px;
   display: flex;
-  justify-content: space-between; /* space between text and socials */
-  align-items: center; /* vertically center */
-  gap: 10px; /* makes it responsive if screen is narrow */
+  justify-content: space-between; 
+  align-items: center;
+  gap: 10px; 
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;

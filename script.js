@@ -218,3 +218,75 @@ if (dna) {
   window.addEventListener('resize', createDNA);
 }
 
+// === CATEGORY FILTER ===
+const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+const recordsSelect = document.getElementById('records-per-page');
+const pageLinksContainer = document.getElementById('page-links');
+const backToTopBtn = document.querySelector('.back-to-top');
+
+let courseRows = Array.from(document.querySelectorAll('.course-row'));
+let currentPage = 1;
+let recordsPerPage = parseInt(recordsSelect.value);
+
+// Function to display current page 
+function displayPage(page) {
+  const visibleRows = courseRows.filter(row => !row.classList.contains('hidden'));
+  const start = (page - 1) * recordsPerPage;
+  const end = start + recordsPerPage;
+
+  visibleRows.forEach((row, index) => {
+    row.style.display = (index >= start && index < end) ? '' : 'none';
+  });
+
+  courseRows.forEach(row => {
+    if (row.classList.contains('hidden')) row.style.display = 'none';
+  });
+
+  currentPage = page;
+  updatePaginationButtons(visibleRows.length);
+}
+
+function updatePaginationButtons(totalVisible) {
+  const totalPages = Math.ceil(totalVisible / recordsPerPage);
+  pageLinksContainer.innerHTML = '';
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    if (i === currentPage) btn.classList.add('active');
+
+    btn.addEventListener('click', () => displayPage(i));
+    pageLinksContainer.appendChild(btn);
+  }
+}
+
+// Handle category filtering
+categoryCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', () => {
+    const selectedCategories = Array.from(categoryCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.getAttribute('data-category'));
+
+    courseRows.forEach(row => {
+      const category = row.getAttribute('data-category');
+      if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+        row.classList.remove('hidden');
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+
+    displayPage(1);
+  });
+});
+
+recordsSelect.addEventListener('change', () => {
+  recordsPerPage = parseInt(recordsSelect.value);
+  displayPage(1);
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+displayPage(1);
