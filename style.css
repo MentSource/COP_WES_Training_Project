@@ -127,21 +127,9 @@ header {
   color: white; 
   margin: 0;
   position: absolute;
-  bottom: 8px; /* sit at bottom of main-nav */
+  bottom: 8px; 
   left: 9px;
-  /* line-height: 1; */
-  /* padding-bottom: 6px;
-  align-self: flex-end; */
 }
-
-/* .nav-text p {
-  color: white;
-  font-size: 14px;
-  margin: 0;
-  line-height: 1.5;
-  margin-left: 30px; 
-  max-width: 65%;
-} */
 
 /* Hero */
 .hero {
@@ -393,7 +381,7 @@ table td em {
   padding: 5px 0;
 }
 
-/* Make checkbox match header color */
+/* Checkbox match header color */
 .custom-checkbox {
   appearance: none;
   width: 18px;
@@ -405,7 +393,7 @@ table td em {
   transition: all 0.2s ease;
 }
 
-/* When checked, fill with same background as parent header */
+/* Checked, fill with same background as parent header */
 .dropdown-header.green .custom-checkbox:checked { background-color: #66bb6a; }
 .dropdown-header.blue .custom-checkbox:checked { background-color: #42a5f5; }
 .dropdown-header.pink .custom-checkbox:checked { background-color: #ec407a; }
@@ -413,60 +401,26 @@ table td em {
 .dropdown-header.teal .custom-checkbox:checked { background-color: #26a69a; }
 .dropdown-header.purple .custom-checkbox:checked { background-color: #8e24aa; }
 
-/* When checked, fill stays white (optional slight tint) */
 .custom-checkbox:checked {
   background-color: white;
 }
 
 .course-row.selected {
-  background-color: rgba(102, 187, 106, 0.2); /* light green tint */
+  background-color: rgba(102, 187, 106, 0.2); 
 }
 
 .course-row.hidden {
   display: none;
 }
-/* Optional hover glow */
 .custom-checkbox:hover {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
-
-/* .dropdown-header.green .header-text { color: #66bb6a; }
-.dropdown-header.blue .header-text { color: #42a5f5; }
-.dropdown-header.pink .header-text { color: #ec407a; }
-.dropdown-header.orange .header-text { color: #ff9800; }
-.dropdown-header.teal .header-text { color: #26a69a; }
-.dropdown-header.purple .header-text { color: #8e24aa; } */
-
-
-/* .arrow {
-  transition: transform 0.3s ease;
-}
-
-.dropdown.open .arrow {
-  transform: rotate(180deg);
-} */
-
-/* .dropdown-content {
-  display: none;
-  list-style: none;
-  padding-left: 15px;
-  margin: 5px 0;
-  background:#e9f8fb;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.dropdown.open .dropdown-content {
-  display: block;
-} */
 
 /* Highlight selected courses */
 .course-item.selected {
   background-color: #d0f0ff;
   border-left: 4px solid #009ecf;
 }
-
-/* Course styling */
 .course-item {
   padding: 8px;
   border-bottom: 1px solid #ccc;
@@ -488,7 +442,7 @@ table td em {
 .course-header-left {
   display: flex;
   align-items: center;
-  gap: 10px; /* keeps small space between text and button */
+  gap: 10px; 
 }
 
 .course-header p {
@@ -586,12 +540,13 @@ table td em {
 }
 
  .primary-btn {
-  background: #5acee6;
+  background: #009ecf;
   color: #fff;
   border: none;
-  padding: 6px 12px;
+  padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .primary-btn:hover {
@@ -613,19 +568,12 @@ table td em {
 .course-details-inline h4 {
   margin: 0;
   white-space: nowrap;
-  /* flex: 0 0 auto;
-  margin: 0;
-  font-size: 18px;
-  color: #333; */
+
 }
 
 .course-details-inline p {
-  flex: 1; /* take remaining middle space */
+  flex: 1; 
   margin: 0;
-  /* margin: 0;
-  line-height: 1.5;
-  color: #555;
-  text-align: center; */
 }
 .course-details-inline .actions {
 
@@ -633,7 +581,7 @@ table td em {
 }
 
 td em {
-  display: block;        /* moves it to a new line */
+  display: block;       
   font-style: italic;    
   color: #555;           
   margin-top: 4px;       
@@ -658,62 +606,6 @@ td em {
 .course-details-row {
   display: none;
 }
-
-/* .expand-toggle {
-  text-align: center;
-  vertical-align: middle;
-}
-
-.expand-icon {
-  width: 28px;
-  height: 28px; 
-  cursor: pointer;
- transition: transform 0.3s ease;
-}
-
-.expand-icon.rotated {
-  transform: rotate(180deg); 
-  transition: transform 0.3s ease;
-} */
-
-/* 
-.rotated {
-  transform: rotate(180deg);
-  
-} */
-
-
-/* Expand/Collapse Toggle */
-/* .expand-toggle {
-  text-align: center;
-  vertical-align: middle;
-} */
-
-/* The circular teal button */
-/* .dropdown-btn {
-  background-color: #20b2aa; 
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: background 0.3s, transform 0.2s;
-}
-
-.dropdown-btn:hover {
-  background-color: #17a2a2;
-  transform: scale(1.05);
-}
-
-.arrow {
-  pointer-events: none;
-} */
 
 .pagination {
   display: flex;
@@ -755,11 +647,6 @@ footer {
   text-decoration: none;
  }
 
-/* .footer-bottom {
-  margin-top: 10px;
-}  */
-
-
 .footer-bottom {
   margin-top: 10px;
   display: flex;
@@ -775,13 +662,13 @@ footer {
 }
 
 .footer-bottom p {
-  margin: 0; /* remove default paragraph margin */
+  margin: 0; 
 }
 
 .socials {
   display: flex;
   align-items: center;
-  gap: 30px; /* space between social links */
+  gap: 30px; 
 }
 
 .socials a {

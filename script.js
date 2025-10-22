@@ -27,15 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ---- Dropdown headers ----
-  // document.querySelectorAll('.dropdown-header').forEach(header => {
-  //   header.addEventListener('click', () => {
-  //     const parent = header.parentElement;
-  //     if (parent) parent.classList.toggle('open');
-  //   });
-  // });
-
-
 
 // Toggle dropdown visibility
 document.querySelectorAll('.dropdown-header').forEach(header => {
@@ -66,7 +57,6 @@ document.querySelectorAll('.category-checkbox').forEach(checkbox => {
                 .forEach(course => course.classList.remove('hidden'));
       });
     } else {
-      // If no checkbox is checked, show all
       courses.forEach(course => course.classList.remove('hidden'));
     }
   });
@@ -112,23 +102,10 @@ document.querySelectorAll('.category-checkbox').forEach(checkbox => {
       }
     });
   });
-
-  // NOTE: remove any other .expand-icon click listeners to avoid duplicates.
 });
 
 
 // === SEARCH FUNCTION ===
-// document.getElementById('global-search').addEventListener('keyup', function () {
-//   const keyword = this.value.toLowerCase().trim();
-//   const rows = document.querySelectorAll('.course-row');
-
-//   rows.forEach(row => {
-//     const text = row.textContent.toLowerCase();
-//     // Show row if keyword exists in text
-//     row.style.display = text.includes(keyword) ? '' : 'none';
-//   });
-// });
-
 document.getElementById('global-search').addEventListener('input', function() {
   const keyword = this.value.toLowerCase().trim();
   const rows = document.querySelectorAll('.course-row');
@@ -168,7 +145,6 @@ hamburger.addEventListener('click', () => {
 
 
 // ---- Animated DNA background ----
-
 const dna = document.getElementById('dna');
 if (dna) {
   const colors = ['#1e88e5','#ea6024','#ccc24f','#89b82a','#bda098',
