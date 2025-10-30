@@ -715,7 +715,7 @@ footer {
   text-decoration: none;
 }
 
-/* * {
+* {
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -728,5 +728,5 @@ img, video {
 html, body {
   width: 100%;
   overflow-x: hidden;
-} */
+}
 
