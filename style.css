@@ -72,6 +72,32 @@ header {
   50%{ transform:translateY(-15px); }
 }
 
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .banner-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .dna {
+    min-width: unset;
+    width: 100%;
+    height: 50px;
+  }
+}
+
+
 .main-nav {
   display: flex;
   flex-direction: column;
@@ -140,6 +166,30 @@ display: block;
 
 }
 
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav-text {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #global-search {
+    width: 100%;
+  }
+}
+
+
 /* Responsive */
 @media(max-width:900px){
   .container{flex-direction:column}
@@ -155,15 +205,27 @@ main {
 }
 .sidebar {
   /* width: 25%; */
-  flex: 1 1 280px;
+  flex: 1 1 100px;
   background: #e9f8fb;
   padding: 20px;
 }
 .course-list {
   /* width: 75%; */
-  flex: 1 1 600px;
+  flex: 1 1 200px;
   padding: 20px;
 }
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+
+  .sidebar, .course-list {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
 
 /* Table */
 table {
@@ -618,6 +680,15 @@ footer {
 .footer-bottom p {
   margin: 0; 
 }
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
 
 .socials {
   display: flex;
