@@ -202,18 +202,21 @@ display: block;
 main {
   display: flex;
   padding: 20px;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 .sidebar {
   /* width: 25%; */
   flex: 0 0 200px;
   background: #e9f8fb;
-  max-width: 100%;
-  /* padding: 20px; */
+  max-width: 380px;
+  min-width: 300px;
+  padding: 20px;
 }
 .course-list {
   /* width: 75%; */
   flex: 1;
-  /* padding: 20px; */
+  padding: 20px;
   min-width: 0;
 }
 
@@ -225,7 +228,14 @@ main {
   .sidebar, .course-list {
     width: 100%;
     flex: none;
-    padding: 10px;
+    padding: 15px;
+    max-width: unset;
+    min-width: unset;
+  }
+  .course-list {
+    width: 100%;
+    flex: none;
+    padding: 15px;
   }
 }
 
