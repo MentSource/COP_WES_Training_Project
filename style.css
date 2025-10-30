@@ -152,11 +152,19 @@ header {
   
 }
 
-.hamburger{        
-
-display: block;
-
+/*  hamburger */
+.hamburger {
+  display: none;
 }
+
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
 
 #global-search{
   padding:0.3rem 0.5rem ;
@@ -715,9 +723,16 @@ footer {
   text-decoration: none;
 }
 
-* {
+.white-link {
+  color: white !important;
+  
+}
+
+/* Universal box-sizing only (safe) */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 img, video {
