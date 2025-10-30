@@ -16,43 +16,11 @@ header {
   background: white;
   height: 100px;
 }
-/* 
-.banner-text{
-  color:#199cd8;
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-.banner-text h2{
-  margin:0 ;
-  font-size:3rem;
-  letter-spacing:1px;
-  flex-shrink: 0;
-  align-self: center;
-}
-.banner-text p{
-  margin: 0;
-  font-size:0.9rem;
-  color:#4da6d4;
-  line-height:1.2;
-  flex-shrink: 0;
-}
-
-.dna {
-  flex: 1;                         
-  min-height: 50px;                 
-  background-image: url("images/logo.png");
-  background-size: cover;            
-  background-position: center;       
-  background-repeat: no-repeat;       
-  border-radius: 8px;                 
-} */
 
 /* ==== IPSN Banner ==== */
 .banner{
   display:flex;
-  justify-content:flex-start;   /* text left, DNA fills right */
+  justify-content:flex-start;   
   align-items:center;
   height:100px;
   padding:2rem;
@@ -86,9 +54,9 @@ header {
   flex:1 ;               
   position:relative;
   min-width: 400px;
-  height: 60px;                   /* taller for full visibility */
+  height: 60px;                   
   display: flex;
-  align-items: center;             /* centers the DNA vertically */
+  align-items: center;            
   justify-content: center;      
 }
 
@@ -159,11 +127,7 @@ header {
 }
 
 .hamburger{        
-  /* font-size: 1.2rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer; */
+
 display: block;
 
 }
@@ -184,16 +148,6 @@ display: block;
   .hamburger{display:inline-block}
 }
 
-/* .hero-buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  background: white;
-  color: #054a87;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-
 /* Main Layout */
 main {
   display: flex;
@@ -213,7 +167,6 @@ main {
 table {
   width: 100%;
   border-collapse: collapse;
-  /* table-layout: fixed;  */
 }
 th, td {
   padding: 10px;
@@ -273,7 +226,6 @@ table td em {
 
 .sidebar {
   width: 280px;
-  /* background-color: #f7f8fa; */
   padding: 1rem;
   border-radius: 8px;
 }
@@ -676,3 +628,19 @@ footer {
   color: #d19d1d;
   text-decoration: none;
 }
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
