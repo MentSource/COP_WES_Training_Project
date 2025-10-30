@@ -205,7 +205,7 @@ main {
 }
 .sidebar {
   /* width: 25%; */
-  flex: 0 0 100px;
+  flex: 0 0 200px;
   background: #e9f8fb;
   max-width: 100%;
   /* padding: 20px; */
