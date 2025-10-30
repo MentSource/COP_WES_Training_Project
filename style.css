@@ -154,12 +154,14 @@ main {
   padding: 20px;
 }
 .sidebar {
-  width: 25%;
+  /* width: 25%; */
+  flex: 1 1 280px;
   background: #e9f8fb;
   padding: 20px;
 }
 .course-list {
-  width: 75%;
+  /* width: 75%; */
+  flex: 1 1 600px;
   padding: 20px;
 }
 
@@ -629,7 +631,7 @@ footer {
   text-decoration: none;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -642,5 +644,5 @@ img, video {
 html, body {
   width: 100%;
   overflow-x: hidden;
-}
+} */
 
