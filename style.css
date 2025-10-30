@@ -204,15 +204,17 @@ main {
   padding: 20px;
 }
 .sidebar {
-  width: 25%;
-  /* flex: 1 1 100px; */
+  /* width: 25%; */
+  flex: 0 0 100px;
   background: #e9f8fb;
-  padding: 20px;
+  max-width: 100%;
+  /* padding: 20px; */
 }
 .course-list {
-  width: 75%;
-  /* flex: 1 1 200px; */
-  padding: 20px;
+  /* width: 75%; */
+  flex: 1;
+  /* padding: 20px; */
+  min-width: 0;
 }
 
 @media (max-width: 900px) {
@@ -222,6 +224,7 @@ main {
 
   .sidebar, .course-list {
     width: 100%;
+    flex: none;
     padding: 10px;
   }
 }
