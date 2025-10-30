@@ -729,7 +729,7 @@ footer {
 }
 
 /* Universal box-sizing only (safe) */
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -743,5 +743,5 @@ img, video {
 html, body {
   width: 100%;
   overflow-x: hidden;
-}
+} */
 
