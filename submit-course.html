@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Training Course</title>
+
+  <!-- Link your external stylesheet -->
+  <!-- <link rel="stylesheet" href="submit-course.css" /> -->
+   <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Submit Training Course</h2>
+
+    <form id="courseForm">
+      <label for="format">Course Format</label>
+      <select id="format" name="format" required>
+        <option value="">Select Format</option>
+        <option>Online</option>
+        <option>In-person</option>
+        <option>Hybrid</option>
+      </select>
+
+      <label for="category">Course Category</label>
+      <input type="text" id="category" name="category" placeholder="e.g. Public Health, Data Science" required />
+
+      <label for="title">Course Title</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="organization">Organization</label>
+      <input type="text" id="organization" name="organization" required />
+
+      <label for="status">Course Status</label>
+      <select id="status" name="status" required>
+        <option value="">Select Status</option>
+        <option>Open</option>
+        <option>Closed</option>
+        <option>Upcoming</option>
+      </select>
+
+      <label for="links">Links</label>
+      <textarea id="links" name="links" rows="3" placeholder="Add course links here..."></textarea>
+
+      <!-- <button type="submit">Submit</button> -->
+      <button type="submit" class="primary-btn">Submit</button>
+
+    </form>
+  </div>
+
+   <script src="script.js"></script>
+
+</body>
+</html>

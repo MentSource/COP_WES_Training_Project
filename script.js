@@ -266,3 +266,10 @@ backToTopBtn.addEventListener('click', () => {
 });
 
 displayPage(1);
+
+// === SUBMIT COURSE FORM HANDLER ===
+    document.getElementById('courseForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! Your course has been submitted.');
+      this.reset();
+    });
