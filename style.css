@@ -578,11 +578,11 @@ table td em {
 
  .primary-btn {
 
-   display: inline-block;
-  background: #009ecf;
+  display: inline-block;
+  background: #efab01;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
