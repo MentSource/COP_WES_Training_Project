@@ -4,6 +4,10 @@ body {
   background: #f9f9f9;
 }
 
+body.home-page {
+  background: #f9f9f9; 
+}
+
 /* Header */
 header {
   background: #009ecf;
@@ -272,7 +276,7 @@ thead th {
   color: #fff;
 } 
 .course-row {
-  border-bottom: 6px solid #e9f8fb; 
+  border-bottom: 6px solid #75d4f1; 
 }
 
 table td em {
@@ -287,10 +291,41 @@ table td em {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
+#records-per-page {
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 40px;
+  padding: 3px 5px;
+  font-size: 14px;
+  border: 2px solid #75d4f1;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+#records-per-page:hover,
+#records-per-page:focus {
+  border-color:#75d4f1;
+}
+
+.page-links {
+  display: flex;
+  align-items: center;
+}
+
 .page-links button {
   margin: 0 3px;
   padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
 }
 .page-links .active {
   background: #054a87;
@@ -313,6 +348,7 @@ table td em {
   width: 280px;
   padding: 1rem;
   border-radius: 8px;
+  background-color: #75d4f1;
 }
 
 .card {
@@ -491,6 +527,20 @@ table td em {
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
+}
+
+.course-actions label {
+  font-size: 14px;
+  color:#333;
+}
+
+#sortCourses {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .course-header-left button {
@@ -578,11 +628,11 @@ table td em {
 
  .primary-btn {
 
-  display: inline-block;
+  display: block;
   background: #efab01;
   color: #fff;
   border: none;
-  padding: 12px 36px;
+  padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
@@ -595,7 +645,7 @@ table td em {
 }
 
 .primary-btn:hover {
-  background: #009ecf;
+  background: #efab01;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
@@ -605,11 +655,109 @@ table td em {
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
+/* Button on the home page (index.html) */
+body.home-page .primary-btn {
+  background: #efab01; 
+  padding: 12px 20px; 
+  font-size: 1.05rem;
+  margin: 14px auto;
+  display: block; 
+  width: 90%; 
+  text-align: center;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  body.home-page .primary-btn {
+    display: block;        
+    width: 100%;
+    padding: 14px 0;       
+    text-align: center;
+    font-size: 1rem;        /
+  }
+}
+
+
+/* Submit Course Page Only */
+body.submit-page {
+  background: #eef3ff; 
+}
+
+ /* Form container styling */
+body.submit-page .form-container {
+  max-width: 800px;          
+  margin: 40px auto;         
+  padding: 24px;             
+  background: #fff;          
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* Button on the submit course page */
+body.submit-page .primary-btn {
+  background: #efab01;; 
+  box-shadow: 0 2px 8px rgba(15,153,213,0.3);
+}
+
+body.submit-page .primary-btn:hover {
+  background: #efab01;; 
+}
+
+
 form .primary-btn {
   width: 100%;
   margin-top: 1.5rem;
   font-size: 1rem;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* space between form fields */
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+
+/* Responsive design for smaller devices */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 20px auto;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px; /* smaller side space on very small screens */
+  }
+
+  .form-container {
+    padding: 16px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem; /* slightly smaller text for mobile fit */
+  }
+
+  .primary-btn {
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+}
+
+
 
 
 .course-details-inline {

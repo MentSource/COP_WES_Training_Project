@@ -4,9 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Submit Training Course</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="submit-page">
 
-  <!-- Link your external stylesheet -->
-  <!-- <link rel="stylesheet" href="submit-course.css" /> -->
+
+  <header>
+    <div class="top-bar">
+      <div class="banner-text">
+        <h2>IPSN</h2>
+        <p>International<br>Pathogen<br>Surveillance<br>Network</p>
+      </div>
+
+      <div class="dna">
+        <div class="dna" id="dna"></div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="nav-text">
+        <h3>Community Of Practice</h3>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION  -->
+  <section class="hero">
+    <h2>Wastewater and Environmental Surveillance Trainings</h2>
+
+    <div class="top-right">
+      <input type="search" id="global-search" placeholder="Search for a course"/>
+      <button id="mobile-menu" class="hamburger">☰</button>
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <div class="form-container">
+    <h2>Submit Training Course</h2>
+
+    <form id="courseForm">
+      <label for="format">Course Format</label>
+      <select id="format" name="format" required>
+        <option value="">Select Format</option>
+        <option>Online</option>
+        <option>In-person</option>
+        <option>Hybrid</option>
+      </select>
+
+      <label for="category">Course Category</label>
+      <input type="text" id="category" name="category" placeholder="e.g. Public Health, Data Science" required />
+
+      <label for="title">Course Title</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="tneme">Course Theme</label>
+      <input type="text" id="theme" name="theme" required />
+
+      <label for="organization">Organization</label>
+      <input type="text" id="organization" name="organization" required />
+
+      <label for="status">Course Status</label>
+      <select id="status" name="status" required>
+        <option value="">Select Status</option>
+        <option>Free</option>
+        <option>Paid</option>
+      </select>
+
+      <label for="links">Links</label>
+      <textarea id="links" name="links" rows="3" placeholder="Add course links here..."></textarea>
+
+      <label for="pdfUpload">Upload a PDF</label>
+      <input type="file" id="pdfUpload" name="pdfUpload" accept=".pdf, .pptx" required />
+
+      <button type="submit" class="primary-btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- FOOTER (copied from index.html) -->
+  <footer> 
+    <div class="footer-bottom">
+      <a href="#" class="white-link">About Us</a>
+      <p>&copy; 2025 WES Trainings developed in collaboration with IPSN Community of Practice Members</p>
+      <div class="socials">
+        <a href="#" class="white-link">Clear Cache</a>
+        <a href="#">Contact Us: ... to submit a course</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- <form id="courseForm">
+  <!- form fields as before -->
+  <!-- <button type="submit" class="primary-btn">Submit</button>
+</form>  -->
+
+<!-- <script>
+  
+</script> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Training Course</title>
+
    <link rel="stylesheet" href="style.css" />
 
 </head>
@@ -36,16 +142,15 @@
       <label for="status">Course Status</label>
       <select id="status" name="status" required>
         <option value="">Select Status</option>
-        <option>Open</option>
-        <option>Closed</option>
-        <option>Upcoming</option>
+        <option>Free</option>
+        <option>$</option>
       </select>
 
       <label for="links">Links</label>
       <textarea id="links" name="links" rows="3" placeholder="Add course links here..."></textarea>
 
-      <!-- <button type="submit">Submit</button> -->
-      <button type="submit" class="primary-btn">Submit</button>
+      <-- <button type="submit">Submit</button> -->
+      <!-- <button type="submit" class="primary-btn">Submit</button>
 
     </form>
   </div>
@@ -53,4 +158,5 @@
    <script src="script.js"></script>
 
 </body>
-</html>
+
+</html> -->  

@@ -6,9 +6,8 @@
   <title>COP WES Training Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body> 
+<body class="home-page"> 
   <!-- Header -->
-
 
    <header>
     <div class="top-bar">
@@ -117,7 +116,42 @@
   </ul>
 </div>
 
-      
+
+<div class="card">  
+      <h3>Course Theme</h3>
+
+      <ul class="course=theme-list">
+        <li class="dropdown-theme">
+          <div class="dropdown-theme-header">
+            <span>Technical</span>
+            <input type="checkbox" class="theme-checkbox" data-theme="Technical">
+           </div>
+        </li>
+
+      <ul class="course=theme-list">
+        <li class="dropdown-theme">
+          <div class="dropdown-theme-header">
+            <span>Policy-focused</span>
+            <input type="checkbox" class="theme-checkbox" data-theme="Policy-focused">
+           </div>
+        </li>
+
+      <ul class="course=theme-list">
+        <li class="dropdown-theme">
+          <div class="dropdown-theme-header">
+            <span>Communications</span>
+            <input type="checkbox" class="theme-checkbox" data-theme="Communications">
+           </div>
+        </li>
+  
+         <ul class="course=theme-list">
+        <li class="dropdown-theme">
+          <div class="dropdown-theme-header">
+            <span>Others</span>
+            <input type="checkbox" class="theme-checkbox" data-theme="Others">
+           </div>
+        </li>
+
 </aside>
 
     <section class="course-list">
@@ -130,29 +164,55 @@
         <div class="course-actions">
           <label for="sortCourses">Sort by:</label>
              <select id="sortCourses">
-               <option>Course Title</option>
+               <option>Course Theme</option>
                <option>Organization</option>
              </select>
          </div>
       </div>
 
-
-      <table>
-        <thead>
+  <div class="table-container"> 
+  <table>
+    <thead>
           <tr>
             <th>Course Fomat</th>
             <th>Course Category</th>
             <th>Course Title</th>
+            <th>Course Theme</th>
             <th>Organization</th>
-            <th> </th>
+            <th>Course Status</th>
+            <th>Link</th>
             
           </tr>
-        </thead>
+    </thead>
 
     <tbody id="courseTable">
-  
+      <!-- Dynamic content will be inserted here -->
+    </tbody>
+  </table> 
+
+  </div>
+      <!-- New content will be inserted here dynamically -->
+  <!-- <table id="coursesTable">
+  <thead>
+    <tr>
+      <th>Format</th>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Theme</th>
+      <th>Organization</th>
+      <th>Status</th>
+      <th>Links</th> -->
+    <!-- </tr>
+  </thead>
+  <tbody id="coursesBody"> -->
+    <!-- dynamically filled -->
+  <!-- </tbody>
+</table> -->
+
+ <!-- old tbody content -->
+
       <!-- Course 1 -->
- <tr class="course-row" data-category="Foundations of WES">
+ <!-- <tr class="course-row" data-category="Foundations of WES">
     <td>Asynchronous online</td>
     <td>Foundations of WES</td>
     <td>Wastewater Bioinformatics Training.</td>
@@ -166,18 +226,18 @@
   </a>
 </td>
 
-  </tr>
+  </tr> -->
   
 
- <tr class="course-row" data-category="Foundations of WES">
+ <!-- <tr class="course-row" data-category="Foundations of WES">
     <td>Synchronous online</td>
     <td>Foundations of WES</td>
     <td>Introduction to Epidemiological Concepts and Approaches in WES .</td>
     <td> University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
-   </td>
+      <!- <button class="primary-btn">Access Course</button> -->
+   <!-- </td>
   </tr>
 
   <tr class="course-row" data-category="Foundations of WES">
@@ -186,20 +246,20 @@
     <td>National Report: Experience Establishing Pilot Project.</td>
     <td> University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
-       <a href="#" class="access-link">Access Course</a>
+       <a href="#" class="access-link">Access Course</a> -->
        <!-- <button class="primary-btn">Access Course</button> -->
-   </td>
-  </tr>
+   <!-- </td>
+  </tr> -->
 
 
-  <tr class="course-row" data-category="Foundations of WES">
+  <!-- <tr class="course-row" data-category="Foundations of WES">
     <td>In-person</td>
     <td>Foundations of WES</td>
     <td>Strategies and Benefits of Interdisciplinary Collaboration for Data Integration.</td>
     <td> University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-       <!-- <button class="primary-btn">Access Course</button> -->
+     
    </td>
   </tr>
    
@@ -210,19 +270,19 @@
     <td>Institute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-       <!-- <button class="primary-btn">Access Course</button> -->
+   
    </td>
-  </tr>
+  </tr> -->
 
   <!-- Course 2 -->
-<tr class="course-row" data-category="Method & Protocols">
+<!-- <tr class="course-row" data-category="Method & Protocols">
     <td>Synchronous online</td>
     <td> Methods & Protocols</td>
     <td>Sampling Protocols. </td>
     <td>Institute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
         <a href="#" class="access-link">Access Course</a>
-       <!-- <button class="primary-btn">Access Course</button> -->
+       
    </td>
   </tr>
 
@@ -233,7 +293,7 @@
     <td>Institute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
   </tr>
  
@@ -244,7 +304,7 @@
     <td>Institute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-       <!-- <button class="primary-btn">Access Course</button> -->
+       
    </td>
   </tr>
  
@@ -255,19 +315,19 @@
     <td>Institute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
-  </tr>
+  </tr> -->
  
  <!-- Course 3 -->
-  <tr class="course-row" data-category="Data Systems & Analysis">
+  <!-- <tr class="course-row" data-category="Data Systems & Analysis">
     <td>Hybrid in-person / online</td>
     <td>Data Systems & Analysis</td>
     <td>Data Platform / Visualization. </td>
     <td>RCSI University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
   </tr>
 
@@ -278,7 +338,7 @@
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
   </tr>
 
@@ -289,21 +349,21 @@
     <td>Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
-  </tr>
+  </tr> -->
  
    <!-- Course 5 -->
-  <tr class="course-row" data-category="Metadata, Standards & Interoperability">
+  <!-- <tr class="course-row" data-category="Metadata, Standards & Interoperability">
     <td>Asynchronous online</td>
     <td>Metadata, Standards & Interoperability</td>
     <td>Ensuring Data Anonymity and Privacy Protection. </td>
     <td>RCSI University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
-   </td>
-  </tr>
+      
+   </td> -->
+  <!-- </tr>
 
    <tr class="course-row" >
     <td>In-person</td>
@@ -312,7 +372,7 @@
     <td>Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
   </tr>
 
@@ -323,35 +383,33 @@
     <td>RCSI University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
       <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
-  </tr>
+  </tr> -->
 
- <tr class="course-row" data-category="Metadata, Standards & Interoperability">
+ <!-- <tr class="course-row" data-category="Metadata, Standards & Interoperability">
     <td>Asynchronous online</td>
     <td>Metadata, Standards & Interoperability</td>
     <td>Governance and Long-term Data Stewardship. </td>
     <td>Insititute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
-  </tr>
+  </tr> -->
 
    <!-- Course 5 -->
-  <tr class="course-row" data-category="Place-Based Applications">
+  <!-- <tr class="course-row" data-category="Place-Based Applications">
     <td>Hybrid in-person/online</td>
     <td> Place-Based Applications
-      <!-- <em>Urban/HUB Settings</em>  -->
     </td>
     <td>WES in HUBs. </td>
     <td>RCSI University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
    </td>
-  </tr>
-
+  </tr> -->
+<!-- 
 <tr class="course-row" data-category="Place-Based Applications">
     <td>In-person</td>
     <td> Place-Based Applications </td>
@@ -359,7 +417,7 @@
     <td>Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
   </tr>
 
@@ -370,19 +428,19 @@
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+     
    </td>
-  </tr>
+  </tr> -->
 
    <!-- Course 6 -->
-  <tr class="course-row" data-category="Place-Based Applications">
+  <!-- <tr class="course-row" data-category="Place-Based Applications">
     <td>In-person</td>
     <td> Place-Based Applications </td>
     <td>WES in Emergency Zones. </td>
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+     
    </td>
   </tr>
 
@@ -393,18 +451,18 @@
     <td>Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+     
    </td>
-  </tr>
+  </tr> -->
 
-   <tr class="course-row" data-category="Place-Based Applications">
+   <!-- <tr class="course-row" data-category="Place-Based Applications">
     <td>In-person</td>
     <td> Place-Based Applications.</td>
     <td>Regulatory Compliance and Legal Considerations. </td>
     <td>University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+    
    </td>
   </tr>
 
@@ -415,19 +473,19 @@
     <td>Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
-  </tr>
+  </tr> -->
 
    <!-- Course 7 -->
-  <tr class="course-row" data-category="Training, Collaboration & Growth">
+  <!-- <tr class="course-row" data-category="Training, Collaboration & Growth">
     <td>Synchronous online</td>
     <td>Training, Collaboration & Growth</td>
     <td>Practical Exercises and Group Discussions</td>
     <td>RCSI University of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
   </tr>
 
@@ -438,12 +496,11 @@
     <td>institute of Medicine and Health Sciences</td>
     <td class="expand-toggle">
        <a href="#" class="access-link">Access Course</a>
-      <!-- <button class="primary-btn">Access Course</button> -->
+      
    </td>
-  </tr>
+  </tr> -->
 
-</tbody>
-</table> 
+
 
       <!-- Pagination -->
 
@@ -461,7 +518,33 @@
 
 <button class="back-to-top">Back to the top ↑</button>
 
-      <!-- <div class="pagination">
+    </section>
+  </main> 
+
+  <!-- Footer -->
+   <footer>
+   
+    <div class="footer-bottom">
+        <a href="#" class="white-link">About Us</a>
+      <p>&copy; 2025 WES Trainings developed in collaboration with IPSN Community of Practice Members </p>
+     
+      <div class="socials">
+          <a href="#" class="white-link">Clear Cache</a>
+        <a href="#">Contact Us: ... to submit a course</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+ <!-- <div class="pagination">
         <span>Records per page</span>
         <select  id="records-per-page">
           <option>50</option>
@@ -489,31 +572,3 @@
         <!-- </div>
       </div>
       <button class="back-to-top">Back to the top ↑</button> -->
-
-    </section>
-  </main> 
-
-  <!-- Footer -->
-   <footer>
-    <!-- <div class="footer-links">
-      <a href="#">About Us</a> -->
-      <!-- <a href="#">Contact Us</a> -->
-      <!-- <a href="#">Privacy Statement</a> -->
-      <!-- <a href="#">Terms & Conditions</a> -->
-      <!-- <a href="#">Clear Cache</a> -->
-      <!-- <a href="#">Sitemap</a> -->
-    <!-- </div> -->
-    <div class="footer-bottom">
-        <a href="#" class="white-link">About Us</a>
-      <p>&copy; 2025 WES Trainings developed in collaboration with IPSN Community of Practice Members </p>
-     
-      <div class="socials">
-          <a href="#" class="white-link">Clear Cache</a>
-        <a href="#">Contact Us: ... to submit a course</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>

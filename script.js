@@ -63,30 +63,24 @@ document.querySelectorAll('.category-checkbox').forEach(checkbox => {
 });
 
 
-
-
-
   // ---- Expand/Collapse course details (single, authoritative handler) ----
   // Assumes rows: <tr class="course-row">...</tr> followed by one or more <tr class="course-details-row">...</tr>
   document.querySelectorAll(".expand-toggle").forEach(toggle => {
     toggle.addEventListener("click", (e) => {
-      // Let clicks on the image bubble up — we handle everything here.
+  
       const row = toggle.closest("tr");
       if (!row) return;
 
-      // Find first course-details-row after this row (stop at next .course-row)
       let firstDetails = row.nextElementSibling;
       while (firstDetails && !firstDetails.classList.contains("course-row")) {
         if (firstDetails.classList.contains("course-details-row")) break;
         firstDetails = firstDetails.nextElementSibling;
       }
-      if (!firstDetails || !firstDetails.classList.contains("course-details-row")) return; // nothing to toggle
+      if (!firstDetails || !firstDetails.classList.contains("course-details-row")) return; 
 
-      // Determine current visibility from computed style (safer than style.display)
       const isVisible = getComputedStyle(firstDetails).display !== "none";
       const newDisplay = isVisible ? "none" : "table-row";
 
-      // Toggle all consecutive course-details-row until the next .course-row
       let cur = row.nextElementSibling;
       while (cur && !cur.classList.contains("course-row")) {
         if (cur.classList.contains("course-details-row")) {
@@ -95,7 +89,6 @@ document.querySelectorAll('.category-checkbox').forEach(checkbox => {
         cur = cur.nextElementSibling;
       }
 
-      // Rotate the icon inside the toggle without replacing content
       const img = toggle.querySelector("img.expand-icon");
       if (img) {
         img.classList.toggle("rotated", !isVisible);
@@ -137,7 +130,7 @@ document.getElementById('courseSearch').addEventListener('input', function() {
 
 // === HAMBURGER MENU FUNCTION ===
 const hamburger = document.getElementById('mobile-menu');
-const nav = document.querySelector('.nav-links'); // Change selector to your actual nav container class or ID
+const nav = document.querySelector('.nav-links'); 
 
 hamburger.addEventListener('click', () => {
   nav.classList.toggle('active');
@@ -155,8 +148,8 @@ if (dna) {
     const width  = dna.offsetWidth;
     const height = dna.offsetHeight;
 
-    const cols = Math.floor(width / 30);   // horizontal density
-    const rows = 9;                        // vertical “rungs”
+    const cols = Math.floor(width / 30);   
+    const rows = 10;                        
     const spacingX = width / (cols + 1);
     const spacingY = height / (rows + 1);
 
@@ -268,8 +261,125 @@ backToTopBtn.addEventListener('click', () => {
 displayPage(1);
 
 // === SUBMIT COURSE FORM HANDLER ===
-    document.getElementById('courseForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you! Your course has been submitted.');
-      this.reset();
+const courseForm = document.getElementById("courseForm");
+
+if (courseForm) {
+  courseForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      course_format: document.getElementById("format").value,
+      course_category: document.getElementById("category").value.trim(),
+      course_title: document.getElementById("title").value.trim(),
+      course_theme: document.getElementById("theme").value.trim(),
+      organization: document.getElementById("organization").value.trim(),
+      course_status: document.getElementById("status").value,
+      links: document.getElementById("links").value.trim(),
+    };
+
+    let responseMsg = document.getElementById("responseMessage");
+    if (!responseMsg) {
+      responseMsg = document.createElement("p");
+      responseMsg.id = "responseMessage";
+      responseMsg.style.marginTop = "20px";
+      responseMsg.style.fontWeight = "bold";
+      courseForm.appendChild(responseMsg);
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/courses", {
+
+      // const response = await fetch("http://localhost:5000/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        responseMsg.style.color = "green";
+        responseMsg.textContent = result.message || "✅ Course submitted successfully!";
+        courseForm.reset();
+      } else {
+        responseMsg.style.color = "red";
+        responseMsg.textContent = result.message || "⚠️ Submission failed.";
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      responseMsg.style.color = "red";
+      responseMsg.textContent = "❌ Network error. Please try again.";
+    }
+  });
+}
+
+  // === LOAD AND DISPLAY COURSES IN TABLE ===
+async function loadCourses() {
+  const tableBody = document.getElementById("coursesTable");
+  if (!tableBody) return; 
+
+  try {
+    const response = await fetch("http://localhost:5000/api/courses");
+    const courses = await response.json();
+
+    // Clear existing rows
+    tableBody.innerHTML = "";
+
+    if (courses.length === 0) {
+      const row = document.createElement("tr");
+      const cell = document.createElement("td");
+      cell.colSpan = 7;
+      cell.textContent = "No courses available yet.";
+      cell.style.textAlign = "center";
+      row.appendChild(cell);
+      tableBody.appendChild(row);
+      return;
+    }
+
+    // Add rows
+    courses.forEach((course) => {
+      const row = document.createElement("tr");
+      row.classList.add("course-row");
+
+      row.innerHTML = `
+        <td>${course.course_format || ""}</td>
+        <td>${course.course_category || ""}</td>
+        <td>${course.course_title || ""}</td>
+        <td>${course.course_theme || ""}</td>
+        <td>${course.organization || ""}</td>
+        <td>${course.status || ""}</td>
+        <td>${course.links ? `<a href="${course.links}" target="_blank">View</a>` : ""}</td>
+      `;
+
+      tableBody.appendChild(row);
     });
+  } catch (error) {
+    console.error("Error loading courses:", error);
+    tableBody.innerHTML = `
+      <tr>
+        <td colspan="7" style="text-align:center;color:red;">
+          ❌ Failed to load courses. Check server connection.
+        </td>
+      </tr>`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadCourses);
+
+  
+  // catch (error) {
+  //   console.error("Error loading courses:", error);
+  //   const tableBody = document.getElementById("coursesBody");
+  //   if (tableBody) {
+  //     tableBody.innerHTML = `
+  //       <tr>
+  //         <td colspan="7" style="text-align:center;color:red;">
+  //           ❌ Failed to load courses. Check server connection.
+  //         </td>
+  //       </tr>`;
+  //   }
+  // }
+//}
+
+// Run the loader when page loads
+// document.addEventListener("DOMContentLoaded", loadCourses);
